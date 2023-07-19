@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-mambalab-live
+  namespace: default
+spec:
+  secretName: local-mambalab-live-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.local.mambalab.live"
+  dnsNames:
+  - "local.mambalab.live"
+  - "*.local.mambalab.live"
