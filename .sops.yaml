@@ -10,3 +10,9 @@ creation_rules:
     key_groups:
       - age:
         - age1fema8gdj73k0hgk7s7h23uavm3mh3smst5eqq0sw8cfcakmxpa6q9pzftc
+
+  - path_regex: .*.yaml
+    encrypted_regex: ^(data|stringData)$
+    age: age1fema8gdj73k0hgk7s7h23uavm3mh3smst5eqq0sw8cfcakmxpa6q9pzftc
+
+
