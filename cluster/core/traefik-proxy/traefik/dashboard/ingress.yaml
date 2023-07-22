@@ -1,9 +1,10 @@
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: traefik-dashboard
   namespace: traefik
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-internal
 spec:
   entryPoints:
@@ -17,3 +18,5 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
+  tls:
+    secretName: local-mambalab-live-tls
