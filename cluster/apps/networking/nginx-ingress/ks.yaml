@@ -6,8 +6,8 @@ metadata:
   name: cluster-apps-nginx-certificates
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cluster-apps-cert-manager-issuers
+  # dependsOn:
+  #   - name: cluster-apps-cert-manager-issuers
   path: ./cluster/apps/networking/nginx-ingress/certificates
   prune: true
   sourceRef:
@@ -25,8 +25,8 @@ metadata:
   name: cluster-apps-nginx-internal
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cluster-apps-nginx-certificates
+  # dependsOn:
+  #   - name: cluster-apps-nginx-certificates
   path: ./kubernetes/apps/networking/nginx/internal
   prune: true
   sourceRef:
