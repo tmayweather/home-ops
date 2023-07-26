@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-external-dns
   namespace: flux-system
 spec:
-  path: ./cluster/apps/networking/external-dns/app
+  path: ./cluster/apps/networking/external-dns/app/bind
   prune: true
   sourceRef:
     kind: GitRepository
