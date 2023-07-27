@@ -3,7 +3,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: pihole
+  name: pihole-kubernetes
   namespace: flux-system
 spec:
   interval: 2h
