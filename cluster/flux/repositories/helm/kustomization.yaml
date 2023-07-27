@@ -6,4 +6,3 @@ resources:
   - ./external-dns.yaml
   - ./ingress-nginx.yaml
   - ./weaveworks.yaml
-    ./pi-hole.yaml
