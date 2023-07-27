@@ -42,7 +42,7 @@ spec:
       - name: EXTERNAL_DNS_RFC2136_TSIG_SECRET_ALG
         value: hmac-sha256
       - name: EXTERNAL_DNS_RFC2136_TSIG_SECRET
-        value: InI9hJZlOucjgXM5t/9E0ElOx2RupRd2IxGZHE12DbU=
+        value: eGQY77fTTkkoN65/UidJjzsmgDvJGHniw+SHIWjt2Q0=
       #   valueFrom:
       #     secretKeyRef:
       #       name: external-dns-bind-secret
