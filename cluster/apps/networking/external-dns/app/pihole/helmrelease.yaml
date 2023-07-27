@@ -1,5 +1,4 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -47,7 +46,7 @@ spec:
     domainFilters: ["mambalab.live"]
     serviceMonitor:
       enabled: true
-    securityContext:
-      fsGroup: 65534
+securityContext:
+  fsGroup: 65534
     # podAnnotations:
     #   secret.reloader.stakater.com/reload: external-dns-bind-secret
