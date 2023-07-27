@@ -8,7 +8,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: pihole-kubernetes
+      chart: pihole
       version: 2.17.0
       sourceRef:
         kind: HelmRepository
