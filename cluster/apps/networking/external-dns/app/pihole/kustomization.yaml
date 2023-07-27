@@ -6,4 +6,4 @@ resources:
   - ./service-account.yaml
   - ./cluster-role.yaml
   - ./pihole-secret.yaml
-  - ./helmrelease.yaml
+  - ./pihole-deploy.yaml
