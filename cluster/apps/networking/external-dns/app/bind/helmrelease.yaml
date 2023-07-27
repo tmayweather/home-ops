@@ -43,15 +43,6 @@ spec:
         value: hmac-sha256
       - name: EXTERNAL_DNS_RFC2136_TSIG_SECRET
         value: RGiygKwtJolsJVuZO/e7u8PxueH/qBl4ELARVpCEgGE=
-        valueFrom:
-          secretKeyRef:
-            name: external-dns-bind-secret
-            key: rndc-algorithm
-      - name: EXTERNAL_DNS_RFC2136_TSIG_SECRET
-        valueFrom:
-          secretKeyRef:
-            name: external-dns-bind-secret
-            key: rndc-secret
     policy: sync
     sources: ["ingress", "service"]
     txtOwnerId: default
