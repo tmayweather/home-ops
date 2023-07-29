@@ -63,6 +63,9 @@ spec:
         proxy-body-size: 0
         proxy-buffer-size: 16k
         proxy-read-timeout: 3600
+        proxy-connect-timeout: 600
+        proxy-send-timeout: 600
+        send-timeout: 600
         ssl-protocols: TLSv1.3 TLSv1.2
       metrics:
         enabled: true
