@@ -77,7 +77,7 @@ spec:
           namespaceSelector:
             any: true
       extraArgs:
-        default-ssl-certificate: networking/local-mambalab-live-tls
+        default-ssl-certificate: networking/mambalab-live-staging-tls
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname

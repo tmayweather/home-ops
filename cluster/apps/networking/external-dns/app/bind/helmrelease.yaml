@@ -53,4 +53,3 @@ spec:
     domainFilters: ["mambalab.live"]
     serviceMonitor:
       enabled: true
-
