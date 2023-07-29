@@ -30,6 +30,8 @@ spec:
     controller:
       replicaCount: 1
       service:
+        enabled: true
+        type: LoadBalancer
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
           metallb.universe.tf/loadBalancerIPs: 192.168.1.230
@@ -43,7 +45,8 @@ spec:
           matchExpressions:
             - key: ingress-class
               operator: In
-              values: ["internal"]
+              values:
+                - internal
       config:
         client-body-buffer-size: 100M
         client-body-timeout: 120
