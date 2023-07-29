@@ -76,8 +76,8 @@ spec:
           namespace: networking
           namespaceSelector:
             any: true
-      # extraArgs:
-      #   default-ssl-certificate: networking/devbu-io-tls
+       extraArgs:
+         default-ssl-certificate: networking/local-mambalab-live-tls
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
