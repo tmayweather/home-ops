@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: mambalab-live
-  namespace: default
+  namespace: networking
 spec:
   secretName: mambalab-live-staging-tls
   issuerRef:
