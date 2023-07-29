@@ -28,11 +28,11 @@ spec:
   values:
     fullnameOverride: nginx-internal
     controller:
-      replicaCount: 2
+      replicaCount: 1
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
-          metallb.universe.tf/loadBalancerIPs: 192.168.1.231
+          metallb.universe.tf/loadBalancerIPs: 192.168.1.230
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
@@ -51,8 +51,8 @@ spec:
         enable-brotli: "true"
         enable-real-ip: "true"
         hsts-max-age: 31449600
-#        keep-alive-requests: 10000
-#        keep-alive: 120
+        keep-alive-requests: 10000
+        keep-alive: 120
         log-format-escape-json: "true"
         log-format-upstream: >
           {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for",
@@ -76,8 +76,8 @@ spec:
           namespace: networking
           namespaceSelector:
             any: true
-       extraArgs:
-         default-ssl-certificate: networking/local-mambalab-live-tls
+      extraArgs:
+        default-ssl-certificate: networking/local-mambalab-live-tls
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
