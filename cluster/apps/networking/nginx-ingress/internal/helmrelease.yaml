@@ -66,6 +66,7 @@ spec:
         proxy-connect-timeout: 600
         proxy-send-timeout: 600
         send-timeout: 600
+        proxy-set-header: Connection "";
         ssl-protocols: TLSv1.3 TLSv1.2
       metrics:
         enabled: true
