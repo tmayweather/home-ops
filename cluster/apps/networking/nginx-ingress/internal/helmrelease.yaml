@@ -33,9 +33,9 @@ spec:
         enabled: true
         type: LoadBalancer
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
+#          external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
           metallb.universe.tf/loadBalancerIPs: 192.168.1.230
-        externalTrafficPolicy: Local
+        externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
         default: true
