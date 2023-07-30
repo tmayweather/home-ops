@@ -46,12 +46,12 @@ spec:
               values: ["internal"]
 
       config:
-        client-body-buffer-size: 100M
-        client-body-timeout: 120
-        client-header-timeout: 120
-        enable-brotli: "true"
+#        client-body-buffer-size: 100M
+#        client-body-timeout: 120
+#        client-header-timeout: 120
+#        enable-brotli: "true"
 #        enable-real-ip: "true"
-        hsts-max-age: 31449600
+#        hsts-max-age: 31449600
         keep-alive-requests: 10000
         keep-alive: 120
         log-format-escape-json: "true"
@@ -61,8 +61,8 @@ spec:
           "status": $status, "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args",
           "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer",
           "http_user_agent": "$http_user_agent"}
-        proxy-body-size: 0
-        proxy-buffer-size: 16k
+#        proxy-body-size: 0
+#        proxy-buffer-size: 16k
 #        proxy-read-timeout: 3600
 #        proxy-connect-timeout: 600
 #        proxy-send-timeout: 600
