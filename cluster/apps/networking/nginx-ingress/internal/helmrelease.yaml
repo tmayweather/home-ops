@@ -35,7 +35,7 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
           metallb.universe.tf/loadBalancerIPs: 192.168.1.230
-        externalTrafficPolicy: Cluster
+        externalTrafficPolicy: Local
       ingressClassResource:
         name: internal
         default: true
@@ -52,7 +52,7 @@ spec:
         client-body-timeout: 120
         client-header-timeout: 120
         enable-brotli: "true"
-        enable-real-ip: "true"
+#        enable-real-ip: "true"
         hsts-max-age: 31449600
         keep-alive-requests: 10000
         keep-alive: 120
@@ -65,12 +65,11 @@ spec:
           "http_user_agent": "$http_user_agent"}
         proxy-body-size: 0
         proxy-buffer-size: 16k
-        proxy-read-timeout: 3600
-        proxy-connect-timeout: 600
-        proxy-send-timeout: 600
-        send-timeout: 600
-        proxy-http-version: 1.1
-        proxy-set-header: Connection "";
+#        proxy-read-timeout: 3600
+#        proxy-connect-timeout: 600
+#        proxy-send-timeout: 600
+#        proxy-http-version: 1.1
+#        proxy-set-header: Connection "";
         ssl-protocols: TLSv1.3 TLSv1.2
       metrics:
         enabled: true

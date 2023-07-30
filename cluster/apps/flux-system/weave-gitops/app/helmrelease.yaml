@@ -30,7 +30,6 @@ spec:
       create: true
       createSecret: false
       username: admin
-      password: password
     ingress:
       enabled: true
       className: internal
