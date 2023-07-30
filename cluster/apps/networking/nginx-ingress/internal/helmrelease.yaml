@@ -63,12 +63,14 @@ spec:
           "http_user_agent": "$http_user_agent"}
 #        proxy-body-size: 0
 #        proxy-buffer-size: 16k
-#        proxy-read-timeout: 3600
-#        proxy-connect-timeout: 600
-#        proxy-send-timeout: 600
+        proxy-read-timeout: 3600
+        proxy-connect-timeout: 3600
+        proxy-send-timeout: 3600
+        resolver-timeout: 3600
+        send-timeout: 3600
 #        proxy-http-version: 1.1
 #        proxy-set-header: Connection "";
-#        ssl-protocols: TLSv1.3 TLSv1.2
+        ssl-protocols: TLSv1.3 TLSv1.2
       metrics:
         enabled: true
         serviceMonitor:
