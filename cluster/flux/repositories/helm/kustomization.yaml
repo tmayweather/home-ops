@@ -7,3 +7,5 @@ resources:
   - ./ingress-nginx.yaml
   - ./weaveworks.yaml
   - ./external-secrets.yaml
+  - ./k8s-at-home.yaml
+  - ./bjw-s-helm.yaml
