@@ -2,14 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: local-mambalab-live
+  name: mambalab-live
   namespace: networking
 spec:
-  secretName: local-mambalab-live-tls
+  secretName: mambalab-live-tls
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "*.local.mambalab.live"
+  commonName: "mambalab.live"
   dnsNames:
-  - "local.mambalab.live"
-  - "*.local.mambalab.live"
+  - "mambalab.live"
+  - "*.mambalab.live"
