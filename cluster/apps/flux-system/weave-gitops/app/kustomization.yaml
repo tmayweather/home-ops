@@ -5,4 +5,5 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - ./externalsecret.yaml
-  - ./helmrelease.yaml
+  # - ./helmrelease.yaml
+  - ./weave-gitops-dashboard.yaml
