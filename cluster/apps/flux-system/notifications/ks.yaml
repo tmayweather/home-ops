@@ -9,7 +9,7 @@ spec:
   # dependsOn:
   #   - name: cluster-apps-external-secrets-stores
   path: ./cluster/apps/flux-system/notifications/discord
-  prune: true
+  prune: false
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
