@@ -25,8 +25,8 @@ metadata:
   name: cluster
   namespace: flux-system
 spec:
-  interval: 30m
-  path: ./cluster/flux
+  interval: 15m
+  path: ./cluster
   prune: true
   wait: false
   sourceRef:
