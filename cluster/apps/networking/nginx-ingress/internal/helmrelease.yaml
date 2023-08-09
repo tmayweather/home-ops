@@ -32,7 +32,7 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
-          metallb.universe.tf/loadBalancerIPs: 192.168.1.230
+          io.cilium/lb-ipam-ips: 192.168.1.230
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
@@ -79,7 +79,7 @@ spec:
           namespaceSelector:
             any: true
       extraArgs:
-        default-ssl-certificate: networking/mambalab-live-tls
+        default-ssl-certificate: networking/mambalab-live-stage-tls
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
