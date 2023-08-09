@@ -15,3 +15,4 @@ resources:
   - ./stakater.yaml
   - ./tf-controller.yaml
   - ./jetstack.yaml
+  - ./metrics-server.yaml
