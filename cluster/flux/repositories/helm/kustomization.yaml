@@ -14,3 +14,4 @@ resources:
   - ./prometheus-community.yaml
   - ./stakater.yaml
   - ./tf-controller.yaml
+  - ./jetstack.yaml
