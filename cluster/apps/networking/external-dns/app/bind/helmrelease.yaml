@@ -51,5 +51,5 @@ spec:
     txtOwnerId: default
     txtPrefix: k8s.
     domainFilters: ["mambalab.live"]
-    serviceMonitor:
-      enabled: true
+#    serviceMonitor:
+#      enabled: true

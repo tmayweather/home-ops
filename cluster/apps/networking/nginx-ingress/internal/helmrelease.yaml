@@ -71,13 +71,13 @@ spec:
 #        proxy-http-version: 1.1
 #        proxy-set-header: Connection "";
         ssl-protocols: TLSv1.3 TLSv1.2
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-          namespace: networking
-          namespaceSelector:
-            any: true
+#      metrics:
+#        enabled: true
+#        serviceMonitor:
+#          enabled: true
+#          namespace: networking
+#          namespaceSelector:
+#            any: true
       extraArgs:
         default-ssl-certificate: networking/mambalab-live-tls
       topologySpreadConstraints:
