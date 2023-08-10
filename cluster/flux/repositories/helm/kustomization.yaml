@@ -16,3 +16,4 @@ resources:
   - ./tf-controller.yaml
   - ./jetstack.yaml
   - ./metrics-server.yaml
+  - ./cilium.yaml
