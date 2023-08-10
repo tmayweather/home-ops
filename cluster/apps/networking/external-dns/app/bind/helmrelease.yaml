@@ -45,7 +45,7 @@ spec:
         valueFrom:
           secretKeyRef:
             name: external-dns-bind-secret
-            key: External-DNS-BIND-Secret
+            key: tsig-key
     policy: sync
     sources: ["ingress", "service"]
     txtOwnerId: default
