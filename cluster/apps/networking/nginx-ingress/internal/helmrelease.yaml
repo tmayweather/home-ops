@@ -28,11 +28,11 @@ spec:
   values:
     fullnameOverride: nginx-internal
     controller:
-      replicaCount: 2
+      replicaCount: 1
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
-          io.cilium/lb-ipam-ips: 192.168.1.230
+          metallb.universe.tf/loadBalancerIPs: 192.168.1.230
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
