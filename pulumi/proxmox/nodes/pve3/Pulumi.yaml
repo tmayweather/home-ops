@@ -1,0 +1,6 @@
+name: pve3
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: proxmox node pve3 vm creation

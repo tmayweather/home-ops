@@ -1,2 +1,3 @@
 cluster/core/certmanager/issuers/secret-cf-token.yaml
 cluster/core/traefik-proxy/traefik/dashboard/secret-dashboard.yaml
+Pulumi.dev.yaml
