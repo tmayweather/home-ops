@@ -28,14 +28,14 @@ spec:
   values:
     installCRDs: true
     replicaCount: 1
-#    serviceMonitor:
-#      enabled: true
-#      interval: 1m
-#    webhook:
-#      serviceMonitor:
-#        enabled: true
-#        interval: 1m
-#    certController:
-#      serviceMonitor:
-#        enabled: true
-#        interval: 1m
+    serviceMonitor:
+      enabled: true
+      interval: 1m
+    webhook:
+      serviceMonitor:
+         enabled: true
+         interval: 1m
+      certController:
+       serviceMonitor:
+         enabled: true
+         interval: 1m
