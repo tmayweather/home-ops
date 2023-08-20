@@ -172,7 +172,13 @@ spec:
             static_configs:
               - targets:
                 - kube-prometheus-stack-prometheus-node-exporter.monitoring.svc.cluster.local:9100
-                
+          - job_name: speedtest
+            scrape_interval: 60m
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                - speedtest_exporter.monitoring.svc.cluster.local:9090
     grafana:
       enabled: false
       forceDeployDashboards: true
