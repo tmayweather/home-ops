@@ -158,6 +158,21 @@ spec:
         #       resources:
         #         requests:
         #           storage: 20Gi
+        additionalScrapeConfigs:
+          - job_name: coredns
+            scrape_interval: 1m
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets: ["coredns.kube-system.svc.cluster.local:9153"]
+          - job_name: node-exporter
+            scrape_interval: 1m
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                - kube-prometheus-stack-prometheus-node-exporter.monitoring.svc.cluster.local:9100
+                
     grafana:
       enabled: false
       forceDeployDashboards: true
@@ -166,7 +181,3 @@ spec:
           multicluster:
             etcd:
               enabled: true
-    nodeExporter:
-      enabled: false
-    kubeStateMetrics:
-      enabled: false
