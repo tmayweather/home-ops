@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: monitoring
 resources:
   # - ./externalsecret.yaml
+  -  ./node-exporter.yaml
   - ./helmrelease.yaml
   # - ./scrapeconfigs
   # - ./prometheusrules
