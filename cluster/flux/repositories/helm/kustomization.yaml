@@ -17,4 +17,5 @@ resources:
   - ./jetstack.yaml
   - ./metrics-server.yaml
   - ./fairwinds.yaml
+  - ./cloudnative-pg.yaml
 #  - ./cilium.yaml
