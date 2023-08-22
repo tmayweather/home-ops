@@ -6,8 +6,8 @@ metadata:
   name: cluster-apps-tf-controller
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cluster-apps-external-secrets-stores
+#  dependsOn:
+#    - name: cluster-apps-external-secrets-stores
   path: ./cluster/apps/flux-system/tf-controller/app
   prune: true
   sourceRef:
