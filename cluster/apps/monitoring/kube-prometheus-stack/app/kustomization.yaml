@@ -8,7 +8,7 @@ resources:
 #  -  ./node-exporter.yaml
   - ./helmrelease.yaml
   # - ./scrapeconfigs
-  - ./prometheusrules.yaml
+  - ./prometheusrule.yaml
   # - ./gatus.yaml
 # configMapGenerator:
 #   - name: alertmanager-config-tpl
