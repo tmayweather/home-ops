@@ -70,7 +70,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        ingressClassName: internal
         hosts:
           - host: &host "{{ .Release.Name }}.mambalab.live"
             paths:
@@ -79,9 +79,9 @@ spec:
         tls:
           - hosts:
               - *host
-    podSecurityContext:
-      runAsUser: 999
-      runAsGroup: 999
+#    podSecurityContext:
+#      runAsUser: 999
+#      runAsGroup: 999
     persistence:
       shared:
         enabled: true
