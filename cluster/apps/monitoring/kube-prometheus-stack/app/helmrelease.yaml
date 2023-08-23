@@ -174,3 +174,11 @@ spec:
           multicluster:
             etcd:
               enabled: true
+
+    resources:
+      requests:
+        cpu: 864m
+        memory: 1730M
+      limits:
+        cpu: 864m
+        memory: 1730M
