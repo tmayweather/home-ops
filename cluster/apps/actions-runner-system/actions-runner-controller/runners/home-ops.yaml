@@ -13,13 +13,13 @@ spec:
       ephemeral: true
       repository: TMayweather/home-ops
       labels: ["self-hosted"]
-#      volumeMounts:
-#        - name: cache-volume
-#          mountPath: /cache
-#      volumes:
-#        - name: cache-volume
-#          persistentVolumeClaim:
-#            claimName: actions-runner-controller-cache
+      volumeMounts:
+        - name: cache-volume
+          mountPath: /cache
+      volumes:
+        - name: cache-volume
+          persistentVolumeClaim:
+            claimName: actions-runner-controller-cache
 ---
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: HorizontalRunnerAutoscaler
