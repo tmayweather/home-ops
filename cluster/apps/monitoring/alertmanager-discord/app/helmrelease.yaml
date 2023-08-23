@@ -38,7 +38,7 @@ spec:
       VERBOSE: ON
     envFrom:
       - secretRef:
-          name: alertmanager-discord
+          name: alertmanager-discord-secret
     service:
       main:
         ports:
