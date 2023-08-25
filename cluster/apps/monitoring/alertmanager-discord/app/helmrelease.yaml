@@ -31,8 +31,8 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: docker.io/benjojo/alertmanager-discord
-      tag: latest@sha256:7d27cd8494b269fe592cf6a9d7f6bdf14ac628bba34c381dc43cf533eaa95158
+      repository: docker.io/rogerrum/alertmanager-discord
+      tag: 1.0.4
     env:
       TZ: America/New_York
       VERBOSE: ON
