@@ -6,3 +6,7 @@ namespace: monitoring
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
+configMapGenerator:
+  - name: alertmanager-config-tpl
+    files:
+      - ./app/alertmanager.yaml
