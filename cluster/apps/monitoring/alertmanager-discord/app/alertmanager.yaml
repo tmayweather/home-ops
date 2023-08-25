@@ -2,12 +2,11 @@
 global:
   resolve_timeout: 5m
 route:
-  group_by: ["alertname", "job"]
-  group_interval: 10m
-  group_wait: 1m
-  receiver: discord
-  repeat_interval: 12h
-  routes:
+  group_by: ['alertname']
+  group_wait: 20s
+  group_interval: 5m
+  repeat_interval: 3h
+  receiver: discord_webhook
     # - receiver: heartbeat
     #   group_interval: 5m
     #   group_wait: 0s
@@ -17,7 +16,7 @@ route:
     - receiver: "null"
       matchers:
         - alertname =~ "InfoInhibitor"
-    - receiver: discord
+    - receiver: discord_webhook
       continue: true
       matchers:
         - severity = "critical"
@@ -28,8 +27,6 @@ inhibit_rules:
     target_matchers:
       - severity = "warning"
 receivers:
-  - name: heartbeat
+  - name: 'discord_webhook'
     webhook_configs:
-      secret_key_ref:
-        name: alertmanager-discord-secret
-        key: alertmanager-discord
+    - url: 'http://localhost:9094'
