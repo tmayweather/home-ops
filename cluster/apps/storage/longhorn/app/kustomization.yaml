@@ -5,6 +5,7 @@ namespace: storage
 resources:
 #  - ./external-secret.yaml
   - ./helmrelease.yaml
+  - ./storageclass.yaml
 labels:
   - pairs:
       app.kubernetes.io/name: longhorn
