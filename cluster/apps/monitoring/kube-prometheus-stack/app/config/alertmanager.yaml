@@ -58,7 +58,7 @@ inhibit_rules:
         priority: |-
           {{ "{{" }} if eq .Status "firing" {{ "}}" }}1{{ "{{" }} else {{ "}}" }}0{{ "{{" }} end {{ "}}" }}
         send_resolved: true
-        sound: gamelan
+        sound: arcade_bonus
         title: >-
           {{ "{{" }} .CommonLabels.alertname {{ "}}" }}
           [{{ "{{" }} .Status | toUpper {{ "}}" }}{{ "{{" }} if eq .Status "firing" {{ "}}" }}:{{ "{{" }} .Alerts.Firing | len {{ "}}" }}{{ "{{" }} end {{ "}}" }}]
