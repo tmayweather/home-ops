@@ -49,6 +49,7 @@ spec:
         replicas: 2
         useExistingSecret: true
         configSecret: alertmanager-secret
+        secrets: alertmanager-secret
 #        storage:
 #          volumeClaimTemplate:
 #            spec:
