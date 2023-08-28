@@ -8,7 +8,7 @@ metadata:
 spec:
   # dependsOn:
   #   - name: cluster-apps-external-secrets-stores
-  path: ./cluster/apps/flux-system/notifications/discord
+  path: ./cluster/apps/flux-system/notifications
   prune: false
   sourceRef:
     kind: GitRepository
