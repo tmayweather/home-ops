@@ -28,9 +28,8 @@ spec:
       name: "*"
     - kind: HelmRepository
       name: "*"
-    - kind: Kustomization
-      name: "*"
-      labelSelector: '!app.kubernetes.io/instance=longhorn'
+#    - kind: Kustomization
+#      name: "*"
     - kind: OCIRepository
       name: "*"
     - kind: Terraform
