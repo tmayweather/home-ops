@@ -16,7 +16,7 @@ route:
 #       repeat_interval: 5m
      - receiver: "null"
        matchers:
-         - alertname =~ "InfoInhibitor"
+         - alertname = "InfoInhibitor"
     - receiver: pushover
       continue: true
       matchers:
