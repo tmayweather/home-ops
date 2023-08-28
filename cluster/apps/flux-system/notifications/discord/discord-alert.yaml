@@ -13,5 +13,3 @@ spec:
       name: '*'
     - kind: Kustomization
       name: '*'
-      exclude:
-        - name: 'cluster-apps-longhorn'
