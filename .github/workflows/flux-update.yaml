@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   components:
-    runs-on: self-hosted
+    runs-on: ["arc-runner-set-home-ops"]
     steps:
       - name: Check out code
         uses: actions/checkout@v3
