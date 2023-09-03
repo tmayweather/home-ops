@@ -49,13 +49,13 @@ spec:
         replicas: 2
         useExistingSecret: true
         configSecret: alertmanager-secret
-#        storage:
-#          volumeClaimTemplate:
-#            spec:
-#              storageClassName: local-path
-#              resources:
-#                requests:
-#                  storage: 1Gi
+        storage:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: local-path
+              resources:
+                requests:
+                  storage: 30Mi
     kubelet:
       enabled: true
       serviceMonitor:
