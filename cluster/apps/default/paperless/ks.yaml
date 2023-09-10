@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ".cluster/apps/default/paperless/app"
+  path: "./cluster/apps/default/paperless/app"
   prune: true
   sourceRef:
     kind: GitRepository
