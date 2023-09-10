@@ -1,3 +1,14 @@
-cluster/core/certmanager/issuers/secret-cf-token.yaml
-cluster/core/traefik-proxy/traefik/dashboard/secret-dashboard.yaml
 Pulumi.dev.yaml
+.DS_Store
+Thumbs.db
+.private/
+.venv/
+.terraform
+*.tfvars
+.decrypted~*
+*.agekey
+*.pub
+*.key
+*.pem
+kubeconfig*
+config.xml
