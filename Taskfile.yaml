@@ -3,7 +3,7 @@ version: "3"
 
 vars:
   PYTHON_BIN: python3
-  CLUSTER_DIR: "{{.ROOT_DIR}}/kubernetes"
+  CLUSTER_DIR: "{{.ROOT_DIR}}/cluster"
   ANSIBLE_DIR: "{{.ROOT_DIR}}/ansible"
   CLUSTER_SECRETS_FILE: "{{.CLUSTER_DIR}}/flux/vars/cluster-secrets.sops.env"
   CLUSTER_SETTINGS_FILE: "{{.CLUSTER_DIR}}/flux/vars/cluster-settings.env"
@@ -17,9 +17,6 @@ env:
   ANSIBLE_ROLES_PATH: "{{.ROOT_DIR}}/.venv/galaxy/ansible_roles"
   ANSIBLE_VARS_ENABLED: "host_group_vars,community.sops.sops"
   K8S_AUTH_KUBECONFIG: "{{.ROOT_DIR}}/kubeconfig"
-
-includes:
-  volsync: .taskfiles/VolSync/Tasks.yaml
 
 tasks:
 
