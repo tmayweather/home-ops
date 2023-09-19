@@ -1,0 +1,7 @@
+{
+  // General RenovateBot configuration
+
+  platform: "github",
+  username: "bot-marley[bot]",
+  gitAuthor: "bot-marley <144719554+bot-marley[bot]@users.noreply.github.com>",
+}
