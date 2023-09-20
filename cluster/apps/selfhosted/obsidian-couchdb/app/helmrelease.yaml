@@ -39,9 +39,17 @@ spec:
           - name: config-storage
             mountPath: /default.d
 
-        envFrom:
-          - secretRef:
-              name: obsidian-sync-secret
+        env:
+          COUCHDB_USER:
+            valueFrom:
+              secretKeyRef:
+                name: obsidian-sync-secret
+                key: couchdb-user
+          COUCHDB_PASSWORD:
+            valueFrom:
+              secretKeyRef:
+                name: obsidian-sync-secret
+                key: couchdb-password
     service:
       main:
         ports:
