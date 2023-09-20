@@ -49,8 +49,8 @@ spec:
         valueFrom:
           secretKeyRef:
             name: obsidian-sync-secret
-            key: couchdb-password
-
+            key: couchdb_password
+                 
     service:
       main:
         ports:
