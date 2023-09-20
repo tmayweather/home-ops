@@ -41,9 +41,17 @@ spec:
     image:
       repository: public.ecr.aws/docker/library/couchdb
       tag: 3.3.2
-    envFrom:
-      - secretRef:
-          name: obsidian-sync-secret
+    env:
+      COUCHDB_USER:
+        valueFrom:
+          secretKeyRef:
+            name: obsidian-sync-secret
+            key: couchdb-user
+      COUCHDB_PASSWORD:
+        valueFrom:
+          secretKeyRef:
+            name: obsidian-sync-secret
+            key: couchdb-password
     service:
       main:
         ports:
