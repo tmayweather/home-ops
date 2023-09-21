@@ -1,6 +1,6 @@
 {
     "yaml.schemas": {
         "https://json.schemastore.org/kustomization.json": "file:///home/tmayweather/home-ops/cluster/apps/test.yaml",
-        "https://json.schemastore.org/helmfile.json": "file:///home/tmayweather/home-ops/cluster/flux/repositories/helm/traefik.yaml"
+        "https://json.schemastore.org/helmfile.json": "file:///home/tmayweather/home-ops/cluster/flux/repositories/helm/traefik.yaml",
     }
 }
