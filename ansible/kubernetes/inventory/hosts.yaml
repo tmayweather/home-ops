@@ -1,26 +1,31 @@
 ---
 kubernetes:
-  vars:
-    ansible_user: k3admin
-    ansible_ssh_port: 22
   children:
     master:
       hosts:
         kang:
+          ansible_user: k3admin
           ansible_host: 192.168.1.115
         stalli:
+          ansible_user: k3admin
           ansible_host: 192.168.1.118
         issa:
+          ansible_user: k3admin
           ansible_host: 192.168.1.121
-    workers:
+    worker:
       hosts:
         azari:
+          ansible_user: k3admin
           ansible_host: 192.168.1.116
         athena:
+          ansible_user: k3admin
           ansible_host: 192.168.1.119
         eve:
+          ansible_user: k3admin
           ansible_host: 192.168.1.120
         nubia:
+          ansible_user: k3admin
           ansible_host: 192.168.1.122
         rambeau:
+          ansible_user: k3admin
           ansible_host: 192.168.1.123
