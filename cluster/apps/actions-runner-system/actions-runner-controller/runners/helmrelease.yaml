@@ -17,7 +17,7 @@ spec:
   maxHistory: 2
   install:
     remediation:
-      retries: 3
+      retries: 4
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -49,7 +49,7 @@ spec:
         volumes:
           - name: data
             hostPath:
-              path: /var/rlib/dagger
+              path: /var/lib/dagger
           - name: socket
             hostPath:
               path: /var/run/dagger
