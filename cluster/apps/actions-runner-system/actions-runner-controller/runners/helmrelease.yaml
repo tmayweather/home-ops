@@ -5,7 +5,7 @@ metadata:
   name: arc-home-ops
   namespace: actions-runner-system
 spec:
-  interval: 30m
+  interval: 10m
   chart:
     spec:
       chart: gha-runner-scale-set
@@ -49,15 +49,15 @@ spec:
         volumes:
           - name: data
             hostPath:
-              path: /var/lib/dagger-08x
+              path: /var/rlib/dagger
           - name: socket
             hostPath:
-              path: /var/run/dagger-08x
+              path: /var/run/dagger
 
         securityContext:
           runAsUser: 0
-          runAsGroup: 1001
-          fsGroup: 1001
+          runAsGroup: 568
+          fsGroup: 568
           fsGroupChangePolicy: "OnRootMismatch"    
   valuesFrom:
     - kind: Secret

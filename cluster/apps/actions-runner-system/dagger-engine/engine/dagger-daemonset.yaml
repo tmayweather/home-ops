@@ -1,16 +1,17 @@
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: dagger-08x
+  name: dagger
   namespace: actions-runner-system
 spec:
   selector:
     matchLabels:
-      name: dagger-08x
+      name: dagger
   template:
     metadata:
       labels:
-        name: dagger-08x
+        name: dagger
     spec:
 
       # Schedule on a specific node
@@ -18,17 +19,17 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: metadata.name
+              - matchExpressions:
+                  - key: metadata.name
                 operator: In
                 values:
-                - rambeau
+                  - rambeau
 
       # Match the runner group so that UNIX sockets work
       securityContext:
         runAsUser: 0
-        runAsGroup: 1001
-        fsGroup: 1001
+        runAsGroup: 568
+        fsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
 
       containers:
@@ -81,7 +82,7 @@ spec:
       volumes:
         - name: data
           hostPath:
-            path: /var/lib/dagger-08x
+            path: /var/lib/dagger
         - name: socket
           hostPath:
-            path: /var/run/dagger-08x
+            path: /var/run/dagger
