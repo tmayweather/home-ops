@@ -20,7 +20,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: metadata.name
+              - key: kubernetes.io/hostname
                 operator: In
                 values:
                 - rambeau
@@ -57,10 +57,10 @@ spec:
           resources:
             requests:
               cpu: "2"
-              memory: "8Gi"
+              memory: "4Gi"
             limits:
               # cpu: "4"
-              memory: 8Gi
+              memory: 4Gi
 
           # Dagger Engine requires privileged execution & all capabilities
           securityContext:
