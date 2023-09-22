@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cluster-apps-dagger-engine
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: "./cluster/apps/actions-runner-system/dagger-engine/engine"
+  prune: false
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes
+  wait: false # no flux ks dependents
+  dependsOn:
+    - name: cluster-apps-actions-runner-controller
+    - name: cluster-apps-actions-runner-controller-runners

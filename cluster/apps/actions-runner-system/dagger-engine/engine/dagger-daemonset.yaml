@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: dagger-08x
+  namespace: actions-runner-system
+spec:
+  selector:
+    matchLabels:
+      name: dagger-08x
+  template:
+    metadata:
+      labels:
+        name: dagger-08x
+    spec:
+
+      # Schedule on a specific node
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: metadata.name
+                operator: In
+                values:
+                - rambeau
+
+      # Match the runner group so that UNIX sockets work
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 1001
+        fsGroup: 1001
+        fsGroupChangePolicy: "OnRootMismatch"
+
+      containers:
+        - name: dagger-engine
+          # https://github.com/dagger/dagger/pkgs/container/engine
+          image: registry.dagger.io/engine:v0.8.4
+
+          # 🚔Uncomment to debug failures
+          # command: ["sleep", "infinity"]
+
+          # https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy
+          imagePullPolicy: IfNotPresent
+
+          # Limit the number of build steps to the CPU limit - `num-cpu` does not respect cgroups
+          # https://github.com/moby/buildkit/blob/v0.11/cmd/buildkitd/config/config.go#L90-L91
+          args:
+            - "--oci-max-parallelism"
+            - "2"
+
+          ports:
+            - containerPort: 8080
+              name: grpc
+
+          # All work happens in Dagger, give it as many resources as possible
+          resources:
+            requests:
+              cpu: "2"
+              memory: "8Gi"
+            limits:
+              # cpu: "4"
+              memory: 8Gi
+
+          # Dagger Engine requires privileged execution & all capabilities
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+                - ALL
+
+          # So that the Dagger client can connect to the Engine
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/dagger
+            - name: socket
+              mountPath: /var/run/buildkit
+
+      # Give the Engine plenty of time to shutdown gracefully
+      terminationGracePeriodSeconds: 60
+
+      volumes:
+        - name: data
+          hostPath:
+            path: /var/lib/dagger-08x
+        - name: socket
+          hostPath:
+            path: /var/run/dagger-08x
