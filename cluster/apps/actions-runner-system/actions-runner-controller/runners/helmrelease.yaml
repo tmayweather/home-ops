@@ -58,7 +58,7 @@ spec:
           runAsUser: 0
           runAsGroup: 568
           fsGroup: 568
-          fsGroupChangePolicy: "OnRootMismatch"    
+          fsGroupChangePolicy: "OnRootMismatch"  
   valuesFrom:
     - kind: Secret
       name: actions-runner-controller-auth-secret
