@@ -5,3 +5,4 @@ namespace: actions-runner-system
 resources:
 #  - ./home-ops.yaml
   - ./helmrelease.yaml
+  - ./dagger-runner.yaml

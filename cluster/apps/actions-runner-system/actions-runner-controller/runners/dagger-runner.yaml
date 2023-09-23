@@ -1,0 +1,48 @@
+---
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: dagger-runner-deployment-2c-4g
+  namespace: actions-runner-system
+spec:
+  replicas: 0
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: actions-runner
+                  operator: Exists
+      dockerEnabled: true
+      dockerdWithinRunnerContainer: true
+      image: summerwind/actions-runner-dind
+      labels:
+        - dagger-runner
+        - dagger-runner-2c-4g
+      organization: TMayweather
+      resources:
+        requests:
+          cpu: "2"
+          memory: 4Gi
+      securityContext:
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
+      tolerations:
+        - effect: NoSchedule
+          key: actions-runner
+          operator: Exists
+      env:
+        - name: _EXPERIMENTAL_DAGGER_RUNNER_HOST
+          value: unix:///var/run/dagger/buildkitd.sock
+#        - name: DAGGER_CLOUD_TOKEN
+#          value: YOUR_DAGGER_CLOUD_TOKEN
+      volumeMounts:
+        - name: dagger-socket
+          mountPath: /var/run/dagger
+      volumes:
+        - name: dagger-socket
+          hostPath:
+            path: /var/run/dagger
+          
