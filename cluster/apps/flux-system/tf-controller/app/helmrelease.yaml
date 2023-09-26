@@ -27,7 +27,7 @@ spec:
     keepHistory: false
   values:
     installCRDs: true
-#    metrics:
-#      enabled: true
-#      serviceMonitor:
-#        enabled: true
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
