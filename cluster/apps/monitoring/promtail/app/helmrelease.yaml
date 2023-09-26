@@ -26,7 +26,7 @@ spec:
   values:
 
     config:
-      lokiAddress: http://loki:3100/loki/api/v1/push
+      lokiAddress: http://loki-gateway.monitoring.svc.cluster.local:80/loki/api/v1/push
       snippets:
         extraScrapeConfigs: |
           - job_name: syslog
