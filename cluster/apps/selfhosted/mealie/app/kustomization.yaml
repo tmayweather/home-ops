@@ -5,3 +5,4 @@ kind: Kustomization
 namespace: selfhosted
 resources:
   - ./helmrelease.yaml
+  - ./pvc.yaml
