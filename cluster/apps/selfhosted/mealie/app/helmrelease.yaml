@@ -38,7 +38,7 @@ spec:
           - name: API_PORT
             value: "9000"
           - name: ALLOW_SIGNUP
-            value: "false"
+            value: "true"
         ports:
           - name: api
             containerPort: 9000
