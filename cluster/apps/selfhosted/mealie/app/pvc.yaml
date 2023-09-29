@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mealie
+  namespace: selfhosted
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn-config  # Specify the Longhorn storage class
+  resources:
+    requests:
+      storage: 10Gi  # Request the desired storage size
