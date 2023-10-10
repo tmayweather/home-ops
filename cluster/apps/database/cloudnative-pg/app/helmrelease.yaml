@@ -6,7 +6,7 @@ metadata:
   name: cloudnative-pg
   namespace: database
 spec:
-  interval: 30m
+  interval: 15m
   chart:
     spec:
       chart: cloudnative-pg
@@ -18,7 +18,7 @@ spec:
   maxHistory: 2
   install:
     remediation:
-      retries: 5
+      retries: 4
   upgrade:
     cleanupOnFail: true
     remediation:
