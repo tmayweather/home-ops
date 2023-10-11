@@ -3,12 +3,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cluster-apps-miniflux
+  name: cluster-apps-actual
   namespace: flux-system
 spec:
   dependsOn:
     - name: cluster-apps-external-secrets-stores
-  path: ./cluster/apps/default/miniflux/app
+  path: ./cluster/apps/default/actual/app
   prune: true
   sourceRef:
     kind: GitRepository
