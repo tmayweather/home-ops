@@ -20,4 +20,5 @@ resources:
   - ./cloudnative-pg.yaml
   - ./kyverno.yaml
   - ./angelnu.yaml
+  - ./crunchydata.yaml
 #  - ./cilium.yaml
