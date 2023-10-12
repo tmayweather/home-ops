@@ -24,14 +24,14 @@ spec:
         annotations:
           reloader.stakater.com/auto: "true"
 
-#        statefulset:
-#          volumeClaimTemplates:
-#            - name: data
-#              accessMode: ReadWriteOnce
-#              size: 1Gi
-#              storageClass: longhorn-config
-#              globalMounts:
-#                - path: /data
+        statefulset:
+          volumeClaimTemplates:
+            - name: data
+              accessMode: ReadWriteOnce
+              size: 1Gi
+              storageClass: longhorn-config
+              globalMounts:
+                - path: /data
 
 #        pod:
 #          enableServiceLinks: false
