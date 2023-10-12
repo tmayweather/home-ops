@@ -33,13 +33,13 @@ spec:
               globalMounts:
                 - path: /data
 
-        pod:
-          enableServiceLinks: false
-          securityContext:
-            runAsUser: 568
-            runAsGroup: 568
-            fsGroup: 568
-            fsGroupChangePolicy: "OnRootMismatch"
+#        pod:
+#          enableServiceLinks: false
+#          securityContext:
+#            runAsUser: 568
+#            runAsGroup: 568
+#            fsGroup: 568
+#            fsGroupChangePolicy: "OnRootMismatch"
 
         containers:
           main:
