@@ -4,10 +4,10 @@ namespace: database
 resources:
 - ./helmrelease.yaml
 
-secretGenerator:
-- name: pgo-s3-creds
-  files:
-  - config/s3.conf
+# secretGenerator:
+# - name: pgo-s3-creds
+#   files:
+#   - config/s3.conf
 
-generatorOptions:
-  disableNameSuffixHash: true
+# generatorOptions:
+#   disableNameSuffixHash: true
