@@ -33,7 +33,7 @@ spec:
               repository: libreddit/libreddit
               tag: latest@sha256:e79a5d6f6836b5a9351340433b1c26e8571ded943a5318f41ae939d314434c84
             env:
-              TZ: America/New_York
+              TZ: "America/New_York"
               LIBREDDIT_DEFAULT_FRONT_PAGE: "default"
               LIBREDDIT_BANNER: "Lowkey"
               LIBREDDIT_DEFAULT_HIDE_HLS_NOTIFICATION: "on"
@@ -61,8 +61,8 @@ spec:
     ingress:
       main:
         enabled: true
-        annotations:
         className: internal
+        annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
           - host: &host "libreddit.mambalab.live"
