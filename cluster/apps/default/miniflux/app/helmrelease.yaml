@@ -1,104 +1,88 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/helmrelease-helm-v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app miniflux
+  name: miniflux
   namespace: default
 spec:
   interval: 30m
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 2.0.3
+      interval: 30m
       sourceRef:
         kind: HelmRepository
-        name: bjw-s
+        name: bjw-s2
         namespace: flux-system
-  maxHistory: 2
-  install:
-    remediation:
-      retries: 4
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
-  uninstall:
-    keepHistory: false
+
   values:
-    initContainers:
-      01-init-db:
-        image: ghcr.io/onedr0p/postgres-init:14.8
-        imagePullPolicy: IfNotPresent
-        envFrom: &envFrom
-          - secretRef:
-              name: miniflux-secret
-    controller:
-      replicas: 2
-      strategy: RollingUpdate
-      annotations:
-        reloader.stakater.com/auto: "true"
-    image:
-      repository: ghcr.io/miniflux/miniflux
-      tag: 2.0.47
-    env:
-      BASE_URL: https://miniflux.mambalab.live
-      CREATE_ADMIN: "1"
-      DEBUG: "1"
-      LOG_DATE_TIME: "1"
-      METRICS_ALLOWED_NETWORKS: "10.42.0.0/16"
-      METRICS_COLLECTOR: "1"
-      POLLING_SCHEDULER: entry_frequency
-      POLLING_FREQUENCY: "15"
-      RUN_MIGRATIONS: "1"
-    envFrom: *envFrom
+    controllers:
+      main:
+        strategy: RollingUpdate
+        annotations:
+          reloader.stakater.com/auto: "true"
+
+        containers:
+          main:
+            image:
+              repository: ghcr.io/miniflux/miniflux
+              tag: 2.0.48@sha256:1aa8755118cf2865ee72521d87b8645080361fb75421314facb3766c0b0c07a3
+            env:
+              BASE_URL: https://miniflux.mambalab.live
+              CREATE_ADMIN: "1"
+              DATABASE_URL:
+                valueFrom:
+                  secretKeyRef:
+                    name: miniflux-pguser-miniflux
+                    key: uri
+              DEBUG: "1"
+              LOG_DATE_TIME: "1"
+              POLLING_SCHEDULER: "entry_frequency"
+              POLLING_FREQUENCY: "15"
+              RUN_MIGRATIONS: "1"
+            envFrom:
+              - secretRef:
+                  name: miniflux-secret
+            probes:
+              liveness:
+                enabled: true
+                custom: true
+                spec:
+                  initialDelaySeconds: 30
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+                  httpGet:
+                    path: /healthcheck
+                    port: 8080
+            resources:
+              requests:
+                cpu: 12m
+                memory: 64M
+              limits:
+                memory: 256M
+
     service:
       main:
         ports:
           http:
-            port: &port 8080
-    serviceMonitor:
-      main:
-        enabled: true
+            port: 8080
+
     ingress:
       main:
         enabled: true
-        ingressClassName: internal
+        className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
-          - host: &host "{{ .Release.Name }}.mambalab.live"
+          - host: &host "miniflux.mambalab.live"
             paths:
               - path: /
-                pathType: Prefix
+                service:
+                  name: main
+                  port: http
         tls:
           - hosts:
               - *host
-    probes:
-      liveness: &probes
-        enabled: true
-        custom: true
-        spec:
-          httpGet:
-            path: /healthcheck
-            port: *port
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
-      readiness: *probes
-      startup:
-        enabled: false
-    topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            app.kubernetes.io/name: *app
-    resources:
-      requests:
-        cpu: 10m
-        memory: 100Mi
-      limits:
-        memory: 750Mi
