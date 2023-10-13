@@ -1,76 +1,79 @@
 ---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helm.toolkit.fluxcd.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &name libreddit
+  name: libreddit
   namespace: selfhosted
 spec:
-  interval: 5m
+  interval: 30m
   chart:
     spec:
       chart: app-template
-      version: 2.0.3
+      version: 1.5.1
       sourceRef:
         kind: HelmRepository
-        name: bjw-s2
+        name: bjw-s
         namespace: flux-system
-      interval: 5m
+  maxHistory: 2
   install:
-    createNamespace: true
     remediation:
       retries: 3
   upgrade:
+    cleanupOnFail: true
     remediation:
       retries: 3
+  uninstall:
+    keepHistory: false
   values:
-    fullnameOverride: *name
-    controllers:
-      main:
-        replicas: 2
-        containers:
-          main:
-            image:
-              repository: libreddit/libreddit
-              tag: latest@sha256:e79a5d6f6836b5a9351340433b1c26e8571ded943a5318f41ae939d314434c84
-            env:
-              TZ: "America/New_York"
-              LIBREDDIT_DEFAULT_FRONT_PAGE: "default"
-              LIBREDDIT_BANNER: "Lowkey"
-              LIBREDDIT_DEFAULT_HIDE_HLS_NOTIFICATION: "on"
-              LIBREDDIT_DEFAULT_THEME: "dracula"
-              LIBREDDIT_DEFAULT_POST_SORT: "hot"
-              LIBREDDIT_DEFAULT_LAYOUT: "card"
-              LIBREDDIT_DEFAULT_SHOW_NSFW: "on"
-              LIBREDDIT_DEFAULT_USE_HLS: "on"
-              LIBREDDIT_DEFAULT_BLUR_NSFW: "on"
-              LIBREDDIT_SFW_ONLY: "off"
-              LIBREDDIT_DEFAULT_AUTOPLAY_VIDEOS: "off"
+    controller:
+      strategy: RollingUpdate
+    image:
+      repository: ghcr.io/auricom/libreddit
+      tag: 0.30.1
+    env:
+      TZ: "America/New_York"
+      LIBREDDIT_DEFAULT_SHOW_NSFW: "true"
+      LIBREDDIT_DEFAULT_THEME: "dracula"
+      LIBREDDIT_DEFAULT_LAYOUT: "card"
 
-            resources:
-              requests:
-                cpu: 50m
-                memory: 150Mi
-              limits:
-                cpu: 200m
-                memory: 300Mi
     service:
       main:
         ports:
           http:
-            port: 8080
+            port: &port 8080
+    probes:
+      liveness: &probes
+        enabled: true
+        custom: true
+        spec:
+          httpGet:
+            path: /settings
+            port: *port
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+      readiness: *probes
+      startup:
+        enabled: false
     ingress:
       main:
         enabled: true
-        className: internal
+        ingressClassName: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
-          - host: &host "libreddit.mambalab.live"
+          - host: &host libreddit.mambalab.live
             paths:
               - path: /
                 pathType: Prefix
-                service:
-                  name: main
-                  port: http
         tls:
-          - secretName: *host
+          - hosts:
+              - *host
+    resources:
+      requests:
+        cpu: 5m
+        memory: 50Mi
+      limits:
+        memory: 250Mi
