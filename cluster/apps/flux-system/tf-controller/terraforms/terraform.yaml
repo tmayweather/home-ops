@@ -37,14 +37,4 @@ spec:
           secret:
             secretName: tf-controller-sops-secret
 
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
-metadata:
-  name: terraform-oci
-spec:
-  interval: 1m
-  url: oci://ghcr.io/tmayweather/terraform
-  ref:
-    tag: main
 
