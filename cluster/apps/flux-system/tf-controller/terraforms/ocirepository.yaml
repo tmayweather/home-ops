@@ -5,6 +5,6 @@ metadata:
   name: terraform-oci
 spec:
   interval: 1m
-  url: oci://ghcr.io/TMayweather/home-ops
+  url: oci://ghcr.io/TMayweather/manifests/terraform
   ref:
     tag: main
