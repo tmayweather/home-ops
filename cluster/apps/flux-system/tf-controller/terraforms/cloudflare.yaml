@@ -17,7 +17,6 @@ metadata:
   name: cloudflare
   namespace: flux-system
 spec:
-  breakTheGlass: true
   interval: 12h
   approvePlan: "auto"
   backendConfig:
