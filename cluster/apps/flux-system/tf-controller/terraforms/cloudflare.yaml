@@ -1,0 +1,48 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/ocirepository-source-v1beta2.json
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: terraform-oci
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: oci://ghcr.io/tmayweather/manifests/terraform
+  ref:
+    tag: latest
+---
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: cloudflare
+  namespace: flux-system
+spec:
+  interval: 12h
+  approvePlan: "auto"
+  backendConfig:
+    disable: true
+  cliConfigSecretRef:
+    name: tfe-cli-config
+  path: "./"
+  sourceRef:
+    kind: OCIRepository
+    name: terraform-oci
+    namespace: flux-system
+  runnerPodTemplate:
+    spec:
+      env:
+        - name: OP_CONNECT_HOST
+          value: http://onepassword-connect:8080
+        - name: OP_CONNECT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: tf-controller-op-secret
+              key: OP_CONNECT_TOKEN
+      volumeMounts:
+        - name: sops
+          mountPath: /home/runner/.config/sops/age/keys.txt
+          subPath: keys.txt
+      volumes:
+        - name: sops
+          secret:
+            secretName: tf-controller-sops-secret
