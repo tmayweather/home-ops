@@ -9,7 +9,7 @@ spec:
   interval: 30m
   url: oci://ghcr.io/tmayweather/manifests/terraform
   ref:
-    tag: latest
+    tag: main
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
