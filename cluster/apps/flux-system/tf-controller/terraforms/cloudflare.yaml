@@ -6,7 +6,7 @@ metadata:
   name: terraform-oci
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 30m
   url: oci://ghcr.io/tmayweather/manifests/terraform
   ref:
     tag: latest
@@ -24,7 +24,7 @@ spec:
     disable: true
   cliConfigSecretRef:
     name: tf-controller-tfrc-secret
-  path: "./"
+  path: ./
   sourceRef:
     kind: OCIRepository
     name: terraform-oci
