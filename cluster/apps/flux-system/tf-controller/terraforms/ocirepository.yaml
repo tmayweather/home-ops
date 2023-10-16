@@ -6,6 +6,6 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: oci://ghcr.io/tmayweather/terraform/manifests
+  url: oci://ghcr.io/tmayweather/manifests/terraform
   ref:
-    tag: main
+    tag: latest
