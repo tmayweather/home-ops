@@ -26,7 +26,7 @@ spec:
   path: ./
   sourceRef:
     kind: OCIRepository
-    name: terraform-oci
+    name: terraform-cloudflare
     namespace: flux-system
   runnerPodTemplate:
     spec:
