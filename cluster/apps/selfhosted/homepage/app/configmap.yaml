@@ -52,16 +52,16 @@ data:
             icon: uptime-kuma.png
             widget:
               type: uptimekuma
-              url: http://uptime.local.mambalab.live
+              url: https://uptime.local.mambalab.live
               slug: services
 
         - Grafana:
             icon: grafana.png
             description: Open-Source Observability Platform
-            href: http://grafana.mambalab.live
+            href: https://grafana.mambalab.live
             widget:
               type: grafana
-              url: http://grafana.mambalab.live
+              url: https://grafana.mambalab.live
               username: {{.GRAFANA_USERNAME}}
               password: {{.GRAFANA_PASSWORD}}
               fields: ["dashboards", "datasources", "alertstriggered"]
@@ -75,7 +75,7 @@ data:
             icon: paperless.png
             href: https://paperless.mambalab.live
             widget:
-              type: paperless
+              type: paperlessngx
               url: https://paperless.mambalab.live
               key: {{.PAPERLESS_API_TOKEN}}
               fields: ["totals", "inbox"]
@@ -103,12 +103,9 @@ data:
       Monitoring:
         style: column
         icon: mdi-chart-line
-    providers:
-      longhorn:
-        url: https://longhorn.mambalab.live
   widgets.yaml: |
     - search:
-        provider: [duckduckgo]]
+        provider: [duckduckgo]
         focus: false
         target: _blank
     - greeting:
