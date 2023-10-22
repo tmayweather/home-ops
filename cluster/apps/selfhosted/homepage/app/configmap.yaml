@@ -34,6 +34,14 @@ data:
         - Pushover:
             - icon: pushover.png
               href: https://client.pushover.net/
+
+    - Clutch Vacations:
+        - Clutch Homepage:
+            - icon: virtualradarserver.png
+              href: https://clutchvacations.com
+        - Travel Agent Portal:
+            - icon: virtualradarserver.png
+              href: https://mytravelagentportal.com/
   docker.yaml: ""
   kubernetes.yaml: |
     mode: cluster
@@ -45,12 +53,16 @@ data:
             widget:
               type: uptimekuma
               url: http://uptime.local.mambalab.live
-              slug: monitoring
+              slug: services
+
+        - Grafana:
+            - icon: grafana.png
+            - href: https://grafana.mambalab.live
 
   settings.yaml: |
-    title: Dashboard
+    title: Mayweather Homepage
     theme: dark
-    color: slate
+    color: emerald
     headerStyle: clean
     layout:
       Media:
@@ -71,9 +83,7 @@ data:
       Monitoring:
         style: column
         icon: mdi-chart-line
-    providers:
-      longhorn:
-        url: http://longhorn.mambalab.live
+
   widgets.yaml: |
     - search:
         provider: [duckduckgo, google]
@@ -83,7 +93,7 @@ data:
         text_size: l
         text: "Hang in there, you got this.."
 
-    - grafana
+    - grafana:
         type: grafana
         url: http://grafana.mambalab.live
     - kubernetes:
