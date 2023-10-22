@@ -65,6 +65,10 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Home
+          gethomepage.dev/name: Actual
+          gethomepage.dev/icon: actual.png
         hosts:
           - host: &host "{{ .Release.Name }}.mambalab.live"
             paths:
