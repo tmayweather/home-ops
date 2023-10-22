@@ -5,3 +5,4 @@ resources:
   - ./configmap.yaml
   - ./helmrelease.yaml
   # - ./externalsecrets.yaml
+  - ./rbac.yaml
