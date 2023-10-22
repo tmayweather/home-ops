@@ -56,9 +56,29 @@ data:
               slug: services
 
         - Grafana:
-            - icon: grafana.png
-            - href: https://grafana.mambalab.live
+            icon: grafana.png
+            description: Open-Source Observability Platform
+            href: http://grafana.mambalab.live
+            widget:
+              type: grafana
+              url: http://grafana.mambalab.live
+              username: {{.GRAFANA_USERNAME}}
+              password: {{.GRAFANA_PASSWORD}}
+              fields: ["dashboards", "datasources", "alertstriggered"]
 
+    - Home:
+        - Actual:
+            href: https://actual.mambalab.live
+            icon: actual.png
+
+        - Paperless:
+            icon: paperless.png
+            href: https://paperless.mambalab.live
+            widget:
+              type: paperless
+              url: https://paperless.mambalab.live
+              key: {{.PAPERLESS_API_TOKEN}}
+              fields: ["totals", "inbox"]
   settings.yaml: |
     title: Mayweather Homepage
     theme: dark
@@ -86,16 +106,12 @@ data:
 
   widgets.yaml: |
     - search:
-        provider: [duckduckgo, google]
+        provider: [duckduckgo]]
         focus: false
         target: _blank
     - greeting:
         text_size: l
         text: "Hang in there, you got this.."
-
-    - grafana:
-        type: grafana
-        url: http://grafana.mambalab.live
     - kubernetes:
         cluster:
           cpu: true
