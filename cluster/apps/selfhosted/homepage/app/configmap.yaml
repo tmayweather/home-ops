@@ -44,7 +44,7 @@ data:
               href: https://mytravelagentportal.com/
   docker.yaml: ""
   kubernetes.yaml: |
-    mode: cluster
+    mode: default
   services.yaml: |
     - Monitoring:
         - Status:
@@ -103,7 +103,9 @@ data:
       Monitoring:
         style: column
         icon: mdi-chart-line
-
+    providers:
+      longhorn:
+        url: https://longhorn.mambalab.live
   widgets.yaml: |
     - search:
         provider: [duckduckgo]]
