@@ -1,0 +1,103 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app homepage
+  namespace: selfhosted
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.0.3
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s2
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    defaultPodOptions:
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
+
+    controllers:
+      main:
+        annotations:
+          reloader.stakater.com/auto: "true"
+
+        type: deployment
+        strategy: Recreate
+
+        containers:
+          main:
+            image:
+              repository: ghcr.io/gethomepage/homepage
+              tag: v0.7.4
+              imagePullPolicy: IfNotPresent
+
+            env:
+              TZ: "AMERICA/NEW_YORK"
+
+            # envFrom:
+            #   - secretRef:
+            #       name: homepage-secret
+
+            resources:
+              requests:
+                cpu: 15m
+                memory: 200M
+              limits:
+                memory: 2G
+
+    service:
+      main:
+        ports:
+          http:
+            port: &port 3000
+
+    ingress:
+      main:
+        enabled: true
+        className: internal
+        hosts:
+          - host: &host "home.mambalab.live"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: main
+                  port: *port
+
+        tls:
+          - hosts:
+              - *host
+    persistence:
+      config:
+        enabled: true
+        type: configMap
+        name: homepage-config
+        globalMounts:
+          - subPath: bookmarks.yaml
+            path: /app/config/bookmarks.yaml
+          - subPath: docker.yaml
+            path: /app/config/docker.yaml
+          - subPath: kubernetes.yaml
+            path: /app/config/kubernetes.yaml
+          - subPath: services.yaml
+            path: /app/config/services.yaml
+          - subPath: settings.yaml
+            path: /app/config/settings.yaml
+          - subPath: widgets.yaml
+            path: /app/config/widgets.yaml
+
+    serviceAccount:
+      create: true
+

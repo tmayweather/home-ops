@@ -1,0 +1,113 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  namespace: default
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  bookmarks.yaml: |
+    - Media:
+        - YouTube:
+            - icon: youtube.png
+              href: 'https://youtube.com/feed/subscriptions'
+        - Spotify:
+            - icon: spotify.png
+              href: 'http://open.spotify.com'
+            - icon: reddit.png
+              href: 'https://reddit.com'
+
+    - Cloud:
+        - CloudFlare:
+            - icon: cloudflare.png
+              href: https://dash.cloudflare.com
+        - BackBlaze:
+            - icon: backblaze.png
+              href: https://secure.backblaze.com/b2_buckets.htm
+        - AWS Console:
+            - icon: aws.png
+              href: https://aws.amazon.com/console/
+        - Terraform Cloud:
+            - icon: terraform.png
+              href: https://app.terraform.io
+        - Pushover:
+            - icon: pushover.png
+              href: https://client.pushover.net/
+  docker.yaml: ""
+  kubernetes.yaml: |
+    mode: cluster
+  services.yaml: |
+    - Monitoring:
+        - Status:
+            href: https://uptime.local.mambalab.live
+            icon: uptime-kuma.png
+            widget:
+              type: uptimekuma
+              url: http://uptime.local.mambalab.live
+              slug: monitoring
+
+  settings.yaml: |
+    title: Dashboard
+    theme: dark
+    color: slate
+    headerStyle: clean
+    layout:
+      Media:
+        style: row
+        columns: 2
+        icon: mdi-play-circle
+      Infrastructure:
+        style: row
+        columns: 3
+        icon: mdi-server
+      Storage:
+        style: row
+        columns: 2
+        icon: mdi-desktop-tower
+      Home:
+        style: column
+        icon: mdi-home-analytics
+      Monitoring:
+        style: column
+        icon: mdi-chart-line
+    providers:
+      longhorn:
+        url: http://longhorn.mambalab.live
+  widgets.yaml: |
+    - logo:
+        icon: 
+    - search:
+        provider: [duckduckgo, google]
+        focus: false
+        target: _blank
+    - greeting:
+        text_size: l
+        text: "Hang in there, you got this.."
+
+    - grafana
+        type: grafana
+        url: http://grafana.mambalab.live
+    - kubernetes:
+        cluster:
+          cpu: true
+          label: cluster
+          memory: true
+          show: true
+          showLabel: true
+        nodes:
+          cpu: true
+          memory: true
+          show: false
+          showLabel: true
+    - longhorn:
+        expanded: false
+        total: true
+        labels: true
+        nodes: false
+    - datetime:
+        text_size: l
+        format:
+          dateStyle: long
+          timeStyle: short
+          hourCycle: h23
