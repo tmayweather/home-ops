@@ -21,12 +21,12 @@ spec:
     remediation:
       retries: 5
   values:
-    defaultPodOptions:
-      securityContext:
-        runAsUser: 568
-        runAsGroup: 568
-        fsGroup: 568
-        fsGroupChangePolicy: "OnRootMismatch"
+#    defaultPodOptions:
+#      securityContext:
+#        runAsUser: 568
+#        runAsGroup: 568
+#        fsGroup: 568
+#        fsGroupChangePolicy: "OnRootMismatch"
 
     controllers:
       main:
@@ -67,6 +67,8 @@ spec:
       main:
         enabled: true
         className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
           - host: &host "home.mambalab.live"
             paths:
