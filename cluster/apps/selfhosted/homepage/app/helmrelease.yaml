@@ -5,7 +5,7 @@ metadata:
   name: &app homepage
   namespace: selfhosted
 spec:
-  interval: 30m
+  interval: 15m
   chart:
     spec:
       chart: app-template

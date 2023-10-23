@@ -18,6 +18,7 @@ spec:
   values:
     controllers:
       main:
+        replicas: 2
         containers:
           main:
             image:
@@ -41,17 +42,18 @@ spec:
         enabled: true
         className: internal
         annotations:
-          external-dns.alpha.kubernetes.io/target: "internal.mambalab.live"
+          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
           - host: &host "uptime.mambalab.live"
             paths:
-              - path: "/"
-                pathType: "Prefix"
+              - path: /
+                pathType: Prefix
                 service:
                   name: main
+                  port: http
         tls:
           - hosts:
-              *host
+              - *host
     persistence:
       data:
         enabled: true

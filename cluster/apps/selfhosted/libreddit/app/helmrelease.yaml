@@ -5,7 +5,7 @@ metadata:
   name: &name libreddit
   namespace: selfhosted
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
       chart: app-template
@@ -26,7 +26,6 @@ spec:
     fullnameOverride: *name
     controllers:
       main:
-        replicas: 2
         containers:
           main:
             image:
