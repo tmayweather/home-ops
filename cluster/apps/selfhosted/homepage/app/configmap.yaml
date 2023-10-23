@@ -42,6 +42,9 @@ data:
         - Travel Agent Portal:
             - icon: virtualradarserver.png
               href: https://mytravelagentportal.com/
+        - GoCCL:
+            - icon: virtualradarserver.png
+              href: https://goccl.com
   docker.yaml: ""
   kubernetes.yaml: |
     mode: default
@@ -67,10 +70,6 @@ data:
               fields: ["dashboards", "datasources", "alertstriggered"]
 
     - Home:
-        - Actual:
-            href: https://actual.mambalab.live
-            icon: actual.png
-
         - Paperless:
             icon: paperless.png
             href: https://paperless.mambalab.live
@@ -79,8 +78,19 @@ data:
               url: https://paperless.mambalab.live
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["totals", "inbox"]
+
+        - Miniflux:
+            icon: miniflux.png
+            href: https://miniflux.mambalab.live
+            widget:
+              type: miniflux
+              url: https://miniflux.mambalab.live
+              key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
+              fields: ["unread", "read"]
+
   settings.yaml: |
     title: Mayweather Homepage
+    favicon: plume.png
     theme: dark
     color: emerald
     headerStyle: clean
@@ -103,6 +113,9 @@ data:
       Monitoring:
         style: column
         icon: mdi-chart-line
+    providers:
+      longhorn:
+        url: https://longhorn.mambalab.live
   widgets.yaml: |
     - search:
         provider: [duckduckgo]
