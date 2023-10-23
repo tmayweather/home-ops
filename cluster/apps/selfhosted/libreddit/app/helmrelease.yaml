@@ -63,6 +63,10 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Home
+          gethomepage.dev/name: libreddit
+          gethomepage.dev/icon: reddit.png
         hosts:
           - host: &host "libreddit.mambalab.live"
             paths:
