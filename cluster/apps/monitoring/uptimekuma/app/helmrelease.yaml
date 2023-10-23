@@ -54,6 +54,20 @@ spec:
           - hosts:
               - *host
 
+    probes:
+      liveness: &probes
+        enabled: true
+        custom: true
+        spec:
+          httpGet:
+            path: /healthcheck
+            port: *port
+          initialDelaySeconds: 300
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+      readiness: *probes
+
     persistence:
       data:
         enabled: true
