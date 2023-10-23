@@ -60,7 +60,7 @@ spec:
         enabled: true
         globalMounts:
           - path: /app/data
-        storageClass: local-path
+        storageClass: longhorn-config
         accessMode: ReadWriteOnce
         size: 1Gi
         retain: true
