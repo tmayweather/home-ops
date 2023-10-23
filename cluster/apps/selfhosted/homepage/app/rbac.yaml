@@ -24,8 +24,10 @@ rules:
     verbs:
       - get
       - list
+  - apiGroups:
+      - traefik.containo.us
     resources:
-      - ingress
+      - ingressroutes
     verbs:
       - get
       - list
