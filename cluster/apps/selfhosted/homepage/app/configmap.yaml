@@ -62,8 +62,8 @@ data:
             widget:
               type: grafana
               url: https://grafana.mambalab.live
-              username: {{.GRAFANA_USERNAME}}
-              password: {{.GRAFANA_PASSWORD}}
+              username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
+              password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
               fields: ["dashboards", "datasources", "alertstriggered"]
 
     - Home:
@@ -77,7 +77,7 @@ data:
             widget:
               type: paperlessngx
               url: https://paperless.mambalab.live
-              key: {{.PAPERLESS_API_TOKEN}}
+              key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["totals", "inbox"]
   settings.yaml: |
     title: Mayweather Homepage
