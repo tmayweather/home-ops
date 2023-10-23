@@ -25,7 +25,7 @@ spec:
               repository: louislam/uptime-kuma
               tag: 1.23.3
             env:
-              TZ: "America/NEW_YORK"
+              TZ: "America/New_York"
             resources:
               requests:
                 cpu: 100m
@@ -54,3 +54,13 @@ spec:
         tls:
           - hosts:
               - *host
+
+    persistence:
+      data:
+        enabled: true
+        globalMounts:
+          - path: /app/data
+        storageClass: longhorn-config
+        accessMode: ReadWriteMany
+        size: 1Gi
+        retain: true
