@@ -46,9 +46,9 @@ spec:
             env:
               TZ: "AMERICA/NEW_YORK"
 
-             envFrom:
-               - secretRef:
-                   name: homepage-secret
+            envFrom:
+              - secretRef:
+                  name: homepage-secret
 
             resources:
               requests:
