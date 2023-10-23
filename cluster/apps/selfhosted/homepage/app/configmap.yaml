@@ -51,11 +51,11 @@ data:
   services.yaml: |
     - Monitoring:
         - Status:
-            href: https://uptime.local.mambalab.live
+            href: https://up.mambalab.live
             icon: uptime-kuma.png
             widget:
               type: uptimekuma
-              url: https://uptime.local.mambalab.live
+              url: https://up.mambalab.live
               slug: services
 
         - Grafana:
@@ -129,9 +129,6 @@ data:
         provider: [duckduckgo]
         focus: false
         target: _blank
-    - greeting:
-        text_size: l
-        text: "Hang in there, you got this.."
     - kubernetes:
         cluster:
           cpu: true
