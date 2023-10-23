@@ -67,9 +67,15 @@ data:
             widget:
               type: uptimekuma
               url: https://uptime.mambalab.live
-              slug: services
               fields: ["up", "down", "uptime", "incident"]
 
+        - Prometheus:
+            icon: prometheus.png
+            href: https://prometheus.mambalab.live
+            widget:
+              type: prometheus
+              url: https://prometheus.mambalab.live
+              fields: ["targets_up", "targets_down", "targets_total"]
         - Grafana:
             icon: grafana.png
             description: Open-Source Observability Platform
@@ -110,7 +116,7 @@ data:
               fields: ["recipes", "users", "categories", "tags"]
   settings.yaml: |
     title: Mayweather Homepage
-    favicon: plume.png
+    favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/plume.png
     theme: dark
     color: emerald
     headerStyle: clean
@@ -136,6 +142,10 @@ data:
         style: row
         columns: 2
         icon: mdi-language-python
+      Clutch Vacations:
+        style: row
+        columns: 2
+        icon: mdi-wallet-travel
     providers:
       longhorn:
         url: https://longhorn.mambalab.live
