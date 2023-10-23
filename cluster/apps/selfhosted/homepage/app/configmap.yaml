@@ -45,6 +45,17 @@ data:
         - GoCCL:
             - icon: virtualradarserver.png
               href: https://goccl.com
+    - Dev:
+        - Github:
+            - icon: github.png
+              href: https://github.com/TMayweather
+        - Kubesearch:
+            - icon: kubernetes-dashboard.png
+              href: https://kubesearch.dev
+
+        - DevOps Books:
+            - icon: mdi-book-open-variant
+              href: https://github.com/rohitg00/DevOps_Books
   docker.yaml: ""
   kubernetes.yaml: |
     mode: default
@@ -57,6 +68,7 @@ data:
               type: uptimekuma
               url: https://uptime.mambalab.live
               slug: services
+              fields: ["up", "down", "uptime", "incident"]
 
         - Grafana:
             icon: grafana.png
@@ -111,16 +123,19 @@ data:
         style: row
         columns: 3
         icon: mdi-server
-      Storage:
-        style: row
-        columns: 2
-        icon: mdi-desktop-tower
       Home:
         style: column
         icon: mdi-home-analytics
       Monitoring:
         style: column
         icon: mdi-chart-line
+      Cloud:
+        style: column
+        icon: mdi-cloud
+      Dev:
+        style: row
+        columns: 2
+        icon: mdi-language-python
     providers:
       longhorn:
         url: https://longhorn.mambalab.live
