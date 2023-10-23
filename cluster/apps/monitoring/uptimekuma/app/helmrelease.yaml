@@ -60,7 +60,4 @@ spec:
         enabled: true
         globalMounts:
           - path: /app/data
-        storageClass: longhorn-config
-        accessMode: ReadWriteOnce
-        size: 1Gi
-        retain: true
+        existingClaim: uptime-kuma-data
