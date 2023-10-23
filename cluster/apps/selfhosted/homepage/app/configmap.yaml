@@ -68,7 +68,7 @@ data:
               type: uptimekuma
               url: https://uptime.mambalab.live
               fields: ["up", "down", "uptime", "incident"]
-
+              slug: services
         - Prometheus:
             icon: prometheus.png
             href: https://prometheus.mambalab.live
