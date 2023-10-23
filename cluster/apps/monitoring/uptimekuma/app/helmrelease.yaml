@@ -43,7 +43,7 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: "internal.mambalab.live"
         hosts:
-          - host: &host "up.mambalab.live"
+          - host: &host "uptime.mambalab.live"
             paths:
               - path: "/"
                 pathType: "Prefix"

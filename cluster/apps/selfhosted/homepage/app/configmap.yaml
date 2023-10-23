@@ -51,11 +51,11 @@ data:
   services.yaml: |
     - Monitoring:
         - Status:
-            href: https://up.mambalab.live
+            href: https://uptime.mambalab.live
             icon: uptime-kuma.png
             widget:
               type: uptimekuma
-              url: https://up.mambalab.live
+              url: https://uptime.mambalab.live
               slug: services
 
         - Grafana:
