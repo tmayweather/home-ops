@@ -77,7 +77,7 @@ data:
               type: paperlessngx
               url: https://paperless.mambalab.live
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
-              fields: ["totals", "inbox"]
+              fields: ["total", "inbox"]
 
         - Miniflux:
             icon: miniflux.png
@@ -88,6 +88,14 @@ data:
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
 
+        - Mealie:
+            icon: mealie.png
+            href: https://mealie.mambalab.live
+            widget:
+              type: mealie
+              url: https://mealie.mambalab.live
+              key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
+              fields: ["recipes", "users", "categories", "tags"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: plume.png
