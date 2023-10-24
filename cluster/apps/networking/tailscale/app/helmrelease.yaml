@@ -69,4 +69,4 @@ spec:
             port: *port
             protocol: UDP
     serviceAccount:
-      enabled: false
+      name: tailscale
