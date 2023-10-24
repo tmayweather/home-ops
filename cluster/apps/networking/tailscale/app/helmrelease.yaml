@@ -36,7 +36,7 @@ spec:
               PORT: &port 45387
               SA_NAME: tailscale
               TS_KUBE_SECRET: "tailscale-state"
-              TS_ROUTES: "10.42.0.0/16"
+              TS_ROUTES: "10.42.0.0/16,192.168.1.0/24"
               TS_EXTRA_ARGS: "--advertise-exit-node"
               TS_USERSPACE: "true"
               TZ: "America/New_York"
