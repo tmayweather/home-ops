@@ -29,3 +29,27 @@ kubernetes:
         rambeau:
           ansible_user: k3admin
           ansible_host: 192.168.1.123
+# ---
+# kubernetes:
+#   vars:
+#     ansible_user: k3admin
+#     ansible_ssh_port: 22
+#   children:
+#     master:
+#       hosts:
+#         kang:
+#           ansible_host: 192.168.1.115
+#         stalli:
+#           ansible_host: 192.168.1.118
+#         issa:
+#           ansible_host: 192.168.1.121
+#     workers:
+#       hosts:
+#         azari:
+#           ansible_host: 192.168.1.116
+#         athena:
+#           ansible_host: 192.168.1.119
+#         nubia:
+#           ansible_host: 192.168.1.122
+#         rambeau:
+#           ansible_host: 192.168.1.123

@@ -73,11 +73,3 @@
           delegate_to: "{{ groups['master'][0] }}"
           changed_when: false
           until: not (kubectl_get_node['stdout'] | from_json).spec.unschedulable is defined
-
-        - name: send ntfy 
-  tasks:
-    - name: Send update complete notify
-      uri:
-        url: "https://ntfy.sh/update"
-        method: POST
-        body: upgrade and update complete!
