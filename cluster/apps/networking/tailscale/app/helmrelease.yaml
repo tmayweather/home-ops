@@ -2,65 +2,74 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app tailscale-operator
-  namespace: &ns networking
+  name: tailscale-gateway
+  namespace: networking
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
-      interval: 15m
+      version: 2.0.3
       sourceRef:
         kind: HelmRepository
-        name: bjw-s
+        name: bjw-s2
         namespace: flux-system
+  maxHistory: 2
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
   values:
-    image:
-      repository: tailscale/k8s-operator
-      tag: unstable-v1.43.30
-
-    updateStrategy:
-      type: Recreate
+    controllers:
+      main:
+        containers:
+          main:
+            fullnameOverride: tailscale
+            image:
+              repository: ghcr.io/tailscale/tailscale
+              tag: v1.50.1
+            env:
+              TZ: "UTC"
+              NO_AUTOUPDATE: "true"
+              TS_KUBE_SECRET: tailscale-state
+              SA_NAME: tailscale
+              TS_HOSTNAME: "tailscale-k8s-gateway"
+              TS_USERSPACE: "true"
+              TS_ROUTES: "192.168.1.0/24"
+              TS_EXTRA_ARGS: "--advertise-exit-node --advertise-tags=tag:k8s --accept-routes --snat-subnet-routes=false"
+            envFrom:
+              - secretRef:
+                  name: tailscale-operator-secret
+            resources:
+              requests:
+                cpu: 10m
+                memory: 50M
+              limits:
+                memory: 278M
+            probes:
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
+              startup:
+                enabled: false
+        pod:
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+          annotations:
+            configmap.reloader.stakater.com/reload: tailscale-operator-secret
 
     service:
       main:
-        enabled: false
-
-    probes:
-      liveness:
-        enabled: false
-      readiness:
-        enabled: false
-      startup:
-        enabled: false
+        ports:
+          http:
+            port: 45387
 
     serviceAccount:
-      create: false
-      name: *app
-
-    env:
-      OPERATOR_HOSTNAME: *app
-      OPERATOR_SECRET: *app
-      OPERATOR_NAMESPACE: *ns
-      CLIENT_ID_FILE: "/oauth/client_id"
-      CLIENT_SECRET_FILE: "/oauth/client_secret"
-      OPERATOR_LOGGING: "debug"
-      PROXY_IMAGE: "tailscale/tailscale:v1.50.1"
-      PROXY_TAGS: "tag:k8s"
-      AUTH_PROXY: "true"
-
-    persistence:
-      oauth:
-        enabled: true
-        type: secret
-        name: tailscale-operator-secret
-        mountPath: /oauth
-        readOnly: true
-
-    resources:
-      requests:
-        cpu: 50m
-        memory: 128Mi
-      limits:
-        memory: 512Mi
+      name: tailscale
