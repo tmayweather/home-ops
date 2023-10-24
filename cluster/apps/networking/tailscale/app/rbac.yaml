@@ -3,6 +3,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: tailscale
+  namespace: networking
 rules:
   - apiGroups: [""]
     resources: ["secrets"]
@@ -23,9 +24,10 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: tailscale
-    namespace: vpn
+    namespace: networking
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: tailscale
+  namespace: networking
