@@ -68,7 +68,7 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["secrets"]
-    verbs: ["*"]
+    verbs: ["get", "update"]  # Adjusted verbs to explicitly include 'get' and 'update'
   - apiGroups: ["apps"]
     resources: ["statefulsets"]
     verbs: ["*"]
