@@ -15,9 +15,15 @@ data:
         - Spotify:
             - icon: spotify.png
               href: 'http://open.spotify.com'
-        - Sportsurge:
+        - Sports:
             - icon: slice.png
               href: 'https://sportsurge.io'
+        - Movies & TV:
+            - icon: streama.png
+              href: 'https://moviestowatch.tv'
+        - Anime:
+            - icon: shiori.png
+              href: 'https://aniwave.to'
 
     - Cloud:
         - CloudFlare:
@@ -38,10 +44,10 @@ data:
 
     - Clutch Vacations:
         - Clutch Homepage:
-            - icon: virtualradarserver.png
+            - icon: yacht-light.png
               href: https://clutchvacations.com
         - Travel Agent Portal:
-            - icon: virtualradarserver.png
+            - icon: synology-photo-station.png
               href: https://mytravelagentportal.com/
         - GoCCL:
             - icon: virtualradarserver.png
@@ -55,7 +61,7 @@ data:
               href: https://kubesearch.dev
 
         - DevOps Books:
-            - icon: mdi-book-open-variant
+            - icon: booksonic.png
               href: https://github.com/rohitg00/DevOps_Books
   docker.yaml: ""
   kubernetes.yaml: |
@@ -89,7 +95,15 @@ data:
               fields: ["dashboards", "datasources", "alertstriggered"]
 
     - Home:
-        - Paperless:
+         - Mealie:
+            icon: mealie.png
+            href: https://mealie.mambalab.live
+            widget:
+              type: mealie
+              url: https://mealie.mambalab.live
+              key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
+              fields: ["recipes", "users", "categories", "tags"]
+         - Paperless:
             icon: paperless.png
             href: https://paperless.mambalab.live
             widget:
@@ -98,14 +112,6 @@ data:
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["total", "inbox"]
 
-        - Mealie:
-            icon: mealie.png
-            href: https://mealie.mambalab.live
-            widget:
-              type: mealie
-              url: https://mealie.mambalab.live
-              key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
-              fields: ["recipes", "users", "categories", "tags"]
 
     - Selfhosted:
         - Miniflux:
@@ -119,34 +125,34 @@ data:
 
   settings.yaml: |
     title: Mayweather Homepage
-    favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/plume.png
+    favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png
     theme: dark
     color: emerald
     headerStyle: clean
     layout:
-      Media:
-        style: column
-        icon: mdi-play-circle
+      Home:
+        style: row
+        columns: 2
+        icon: mdi-home-analytics
       Selfhosted:
         style: row
         columns: 2
         icon: mdi-server
-      Home:
-        style: column
-        icon: mdi-home-analytics
       Monitoring:
-        style: column
+        style: row
         icon: mdi-chart-line
+        columns: 2
+      Media:
+        style: column
+        icon: mdi-play-circle
       Cloud:
         style: column
         icon: mdi-cloud
       Dev:
-        style: row
-        columns: 2
+        style: column
         icon: mdi-language-python
       Clutch Vacations:
-        style: row
-        columns: 2
+        style: column
         icon: mdi-wallet-travel
     providers:
       longhorn:

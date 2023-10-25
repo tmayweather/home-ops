@@ -66,7 +66,7 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
           gethomepage.dev/enabled: "true"
-          gethomepage.dev/group: Home
+          gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Actual
           gethomepage.dev/icon: actual.png
         hosts:
