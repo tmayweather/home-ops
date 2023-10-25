@@ -15,8 +15,12 @@ data:
         - Spotify:
             - icon: spotify.png
               href: 'http://open.spotify.com'
+        - Reddit:
             - icon: reddit.png
               href: 'https://reddit.com'
+        - Sportsurge:
+            - icon: slice.png
+              href: 'https://sportsurge.io'
 
     - Cloud:
         - CloudFlare:
@@ -47,7 +51,7 @@ data:
               href: https://goccl.com
     - Dev:
         - Github:
-            - icon: github.png
+            - icon: git.png
               href: https://github.com/TMayweather
         - Kubesearch:
             - icon: kubernetes-dashboard.png
@@ -61,7 +65,7 @@ data:
     mode: default
   services.yaml: |
     - Monitoring:
-        - Status:
+        - Uptime Kuma:
             href: https://uptime.mambalab.live
             icon: uptime-kuma.png
             widget:
@@ -123,7 +127,7 @@ data:
     layout:
       Media:
         style: row
-        columns: 2
+        columns: 3
         icon: mdi-play-circle
       Infrastructure:
         style: row
