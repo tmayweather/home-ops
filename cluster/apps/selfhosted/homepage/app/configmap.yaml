@@ -15,9 +15,6 @@ data:
         - Spotify:
             - icon: spotify.png
               href: 'http://open.spotify.com'
-        - Reddit:
-            - icon: reddit.png
-              href: 'https://reddit.com'
         - Sportsurge:
             - icon: slice.png
               href: 'https://sportsurge.io'
@@ -101,6 +98,16 @@ data:
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["total", "inbox"]
 
+        - Mealie:
+            icon: mealie.png
+            href: https://mealie.mambalab.live
+            widget:
+              type: mealie
+              url: https://mealie.mambalab.live
+              key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
+              fields: ["recipes", "users", "categories", "tags"]
+
+    - Selfhosted:
         - Miniflux:
             icon: miniflux.png
             href: https://miniflux.mambalab.live
@@ -110,14 +117,6 @@ data:
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
 
-        - Mealie:
-            icon: mealie.png
-            href: https://mealie.mambalab.live
-            widget:
-              type: mealie
-              url: https://mealie.mambalab.live
-              key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
-              fields: ["recipes", "users", "categories", "tags"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/plume.png
@@ -126,12 +125,11 @@ data:
     headerStyle: clean
     layout:
       Media:
-        style: row
-        columns: 3
+        style: column
         icon: mdi-play-circle
-      Infrastructure:
+      Selfhosted:
         style: row
-        columns: 3
+        columns: 2
         icon: mdi-server
       Home:
         style: column
@@ -161,7 +159,7 @@ data:
     - kubernetes:
         cluster:
           cpu: true
-          label: cluster
+          label: mambalab
           memory: true
           show: true
           showLabel: true
