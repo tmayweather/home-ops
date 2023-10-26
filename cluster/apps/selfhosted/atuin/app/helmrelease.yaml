@@ -36,8 +36,6 @@ spec:
               repository: ghcr.io/atuinsh/atuin
               tag: 17.0.0
             env:
-              BASE_URL: https://sh.mambalab.live
-              CREATE_ADMIN: "1"
               ATUIN_HOST: 0.0.0.0
               ATUIN_PORT: &port 80
               ATUIN_OPEN_REGISTRATION: "true"
@@ -51,6 +49,8 @@ spec:
               POLLING_SCHEDULER: "entry_frequency"
               POLLING_FREQUENCY: "15"
               RUN_MIGRATIONS: "1"
+              BASE_URL: https://sh.mambalab.live
+              CREATE_ADMIN: "1"
             envFrom:
               - secretRef:
                   name: atuin-secret

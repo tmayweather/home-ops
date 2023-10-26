@@ -8,6 +8,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-external-secrets-stores
+    - name: cluster-apps-crunchy-postgres-operator 
   path: ./cluster/apps/selfhosted/atuin/app
   prune: true
   sourceRef:
