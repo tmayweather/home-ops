@@ -46,7 +46,7 @@ data:
         - Clutch Homepage:
             - icon: yacht-light.png
               href: https://clutchvacations.com
-        - Travel Agent Portal:
+        - Travel Portal:
             - icon: synology-photo-station.png
               href: https://mytravelagentportal.com/
         - GoCCL:
@@ -71,6 +71,7 @@ data:
         - Uptime Kuma:
             href: https://uptime.mambalab.live
             icon: uptime-kuma.png
+            description: Status Monitor
             widget:
               type: uptimekuma
               url: https://uptime.mambalab.live
@@ -78,6 +79,7 @@ data:
               slug: services
         - Prometheus:
             icon: prometheus.png
+            description: Systems Monitoring and Alerting Toolkit
             href: https://prometheus.mambalab.live
             widget:
               type: prometheus
@@ -85,7 +87,7 @@ data:
               fields: ["targets_up", "targets_down", "targets_total"]
         - Grafana:
             icon: grafana.png
-            description: Open-Source Observability Platform
+            description: Observability Platform
             href: https://grafana.mambalab.live
             widget:
               type: grafana
@@ -98,6 +100,7 @@ data:
          - Mealie:
             icon: mealie.png
             href: https://mealie.mambalab.live
+            description: Shopping Lists and Recipes Aggregate
             widget:
               type: mealie
               url: https://mealie.mambalab.live
@@ -106,6 +109,7 @@ data:
          - Paperless:
             icon: paperless.png
             href: https://paperless.mambalab.live
+            description: Document Management System
             widget:
               type: paperlessngx
               url: https://paperless.mambalab.live
@@ -117,6 +121,7 @@ data:
         - Miniflux:
             icon: miniflux.png
             href: https://miniflux.mambalab.live
+            description: RSS Feed Reader
             widget:
               type: miniflux
               url: https://miniflux.mambalab.live
@@ -182,6 +187,6 @@ data:
     - datetime:
         text_size: l
         format:
-          dateStyle: long
+          dateStyle: short
           timeStyle: short
           hourCycle: h23
