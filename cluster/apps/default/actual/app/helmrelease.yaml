@@ -69,6 +69,7 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Actual
           gethomepage.dev/icon: actual.png
+          tailscale.com/expose: "true"
         hosts:
           - host: &host "{{ .Release.Name }}.mambalab.live"
             paths:
