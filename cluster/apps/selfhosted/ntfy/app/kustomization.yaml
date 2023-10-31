@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: selfhosted
 resources:
   - ./helmrelease.yaml
+  - ./pvc.yaml
 configMapGenerator:
     - name: server-config
       files:
