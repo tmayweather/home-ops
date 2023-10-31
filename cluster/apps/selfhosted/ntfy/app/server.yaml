@@ -1,2 +1,4 @@
 cache-file: "/var/cache/ntfy/cache.db"
 attachment-cache-dir: "/var/cache/ntfy/attachments"
+#base-url: "https://ntfy.mambalab.live"
+upstream-base-url: "https://ntfy.sh"
