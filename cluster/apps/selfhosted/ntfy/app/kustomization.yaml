@@ -9,6 +9,6 @@ resources:
 configMapGenerator:
     - name: server-config
       files:
-        - ./server.yaml
+        - ./config/server.yaml
 generatorOptions:
   disableNameSuffixHash: true

@@ -1,0 +1,12 @@
+cache-file: "/var/cache/ntfy/cache.db"
+attachment-cache-dir: "/var/cache/ntfy/attachments"
+base-url: "https://ntfy.mambalab.live"
+behind-proxy: true
+listen-http: ":80"
+listen-https: ":443"
+upstream-base-url: "https://ntfy.sh"
+attachment-total-size-limit: "5G"
+attachment-file-size-limit: "15M"
+attachment-expiry-duration: "3h"
+visitor-attachment-total-size-limit: "100M"
+visitor-attachment-daily-bandwidth-limit: "500M"
