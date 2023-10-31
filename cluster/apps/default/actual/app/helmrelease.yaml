@@ -5,6 +5,7 @@ kind: HelmRelease
 metadata:
   name: actual
   namespace: default
+  annotations: tailscale.com/expose: "true" 
 spec:
   interval: 30m
   chart:
@@ -69,7 +70,7 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Actual
           gethomepage.dev/icon: actual.png
-          tailscale.com/expose: "true"
+
         hosts:
           - host: &host "{{ .Release.Name }}.mambalab.live"
             paths:
