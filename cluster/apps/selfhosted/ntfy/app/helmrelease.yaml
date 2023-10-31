@@ -83,7 +83,7 @@ spec:
         enabled: true
         type: configMap
         name: server-config
-        mountPath: /etc/ntfy/server.yml
+        mountPath: /etc/ntfy/server.yaml
       cache:
         enabled: true
         type: pvc
