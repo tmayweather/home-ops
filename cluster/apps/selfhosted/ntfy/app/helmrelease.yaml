@@ -44,6 +44,7 @@ spec:
               NTFY_BEHIND_PROXY: "true"
               NTFY_LISTEN_HTTP: ":8080"
               NTFY_BASE_URL: "https://nfty.mambalab.live"
+              NTFY_UPSTREAM_BASE_URL: "https://ntfy.sh"
               PORT: &port 8080
             resources:
               requests:
