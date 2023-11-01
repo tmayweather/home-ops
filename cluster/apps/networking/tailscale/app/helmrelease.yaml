@@ -41,7 +41,7 @@ spec:
               TS_USERSPACE: true
               TS_KUBE_SECRET: tailscale-state
               TS_TAILSCALED_EXTRA_ARGS: --debug=0.0.0.0:2000
-              TS_ROUTES: "${NODE_CIDR},${CLUSTER_CIDR},${SERVICE_CIDR}
+              TS_ROUTES: "192.168.1.0/24,10.42.0.0/16,10.43.0.0/16"
             envFrom:
               - secretRef:
                   name: tailscale-secret
