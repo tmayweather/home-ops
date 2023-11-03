@@ -7,9 +7,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
-  url: oci://ghcr.io/tmayweather/manifests/terraform
+  url: oci://ghcr.io/tmayweather/manifests/cloudflare
   ref:
-    tag: a4f1c71
+    tag: e39b990
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform

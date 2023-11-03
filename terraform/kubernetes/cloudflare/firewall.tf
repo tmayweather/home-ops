@@ -36,4 +36,3 @@ resource "cloudflare_firewall_rule" "domain_github_flux_webhook" {
   filter_id   = cloudflare_filter.domain_github_flux_webhook.id
   action      = "allow"
 }
-
