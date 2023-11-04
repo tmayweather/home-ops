@@ -1,0 +1,50 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: excalidraw
+  namespace: selfhosted
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.0.3
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s2
+        namespace: flux-system
+
+  values:
+    image:
+      repository: ghcr.io/onedr0p/excalidraw
+      tag: latest@sha256:bafe3a1e529aac9e9d536199e77133b60bfce4413458ee0a46e48fb07095d23b
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
+            targetPort: 80
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "internal"
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
+        hosts:
+          - host: &host "draw.mambalab.live"
+            paths:
+              - path: /
+        tls:
+          - hosts:
+              - *host
+
+    resources:
+      requests:
+        cpu: 5m
+        memory: 15M
+      limits:
+        memory: 15M
