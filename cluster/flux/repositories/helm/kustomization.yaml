@@ -23,4 +23,5 @@ resources:
   - ./crunchydata.yaml
   - ./bjw-s2.yaml
   - ./lwolf.yaml
+  - ./descheduler.yaml
 #  - ./cilium.yaml
