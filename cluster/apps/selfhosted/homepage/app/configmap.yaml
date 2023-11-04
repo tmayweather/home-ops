@@ -52,6 +52,10 @@ data:
         - GoCCL:
             - icon: virtualradarserver.png
               href: https://goccl.com
+        - Cruising Power:
+            - icon: yacht-light.png
+              href: https://secure.cruisingpower.com
+
     - Dev:
         - Github:
             - icon: git.png
