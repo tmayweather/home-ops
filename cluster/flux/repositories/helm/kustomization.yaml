@@ -22,4 +22,5 @@ resources:
   - ./angelnu.yaml
   - ./crunchydata.yaml
   - ./bjw-s2.yaml
+  - ./lwolf.yaml
 #  - ./cilium.yaml
