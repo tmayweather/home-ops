@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     kind: Deployment
-    schedule: "*/5 * * * *"
+    schedule: "0 0 * * 0"
     deschedulerPolicy:
       strategies:
         RemovePodsHavingTooManyRestarts:
