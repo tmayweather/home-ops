@@ -120,7 +120,6 @@ data:
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["total", "inbox"]
 
-
     - Selfhosted:
         - Miniflux:
             icon: miniflux.png
@@ -131,6 +130,14 @@ data:
               url: https://miniflux.mambalab.live
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
+        - Pi-Hole:
+            icon: pi-hole.png
+            href: http://pi.hole
+            description: DNS Server & Ad-Blocker
+            widget:
+              type: pihole
+              url: http://pi.hole
+              key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
 
   settings.yaml: |
     title: Mayweather Homepage
