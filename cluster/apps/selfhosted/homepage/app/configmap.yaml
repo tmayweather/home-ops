@@ -132,7 +132,7 @@ data:
               fields: ["unread", "read"]
         - PiHole:
             icon: pi-hole.png
-            href: http://192.168.1.43
+            href: http://pi.hole
             description: DNS Server & Ad-Blocker
             widget:
               type: pihole
