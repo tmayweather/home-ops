@@ -26,4 +26,4 @@ resources:
   - ./descheduler.yaml
   - ./metallb-charts.yaml
   - ./democratic-csi.yaml
-#  - ./cilium.yaml
+  - ./cilium.yaml
