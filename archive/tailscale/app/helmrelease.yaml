@@ -17,11 +17,11 @@ spec:
   maxHistory: 2
   install:
     remediation:
-      retries: 3
+      retries: 4
   upgrade:
     cleanupOnFail: true
     remediation:
-      retries: 3
+      retries: 4
   uninstall:
     keepHistory: false
   values:
@@ -41,7 +41,7 @@ spec:
               TS_USERSPACE: true
               TS_KUBE_SECRET: tailscale-state
               TS_TAILSCALED_EXTRA_ARGS: --debug=0.0.0.0:2000
-              TS_ROUTES: "192.168.1.0/24"
+              TS_ROUTES: "192.168.1.0/24,10.42.0.0/16,10.43.0.0/16"
             envFrom:
               - secretRef:
                   name: tailscale-secret

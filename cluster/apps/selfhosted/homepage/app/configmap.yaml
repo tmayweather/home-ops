@@ -52,6 +52,10 @@ data:
         - GoCCL:
             - icon: virtualradarserver.png
               href: https://goccl.com
+        - Cruising Power:
+            - icon: yacht-light.png
+              href: https://secure.cruisingpower.com
+
     - Dev:
         - Github:
             - icon: git.png
@@ -116,7 +120,6 @@ data:
               key: {{HOMEPAGE_VAR_PAPERLESS_API_TOKEN}}
               fields: ["total", "inbox"]
 
-
     - Selfhosted:
         - Miniflux:
             icon: miniflux.png
@@ -127,7 +130,15 @@ data:
               url: https://miniflux.mambalab.live
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
-
+        - PiHole:
+            icon: pi-hole.png
+            href: http://pi.hole
+            description: DNS Server & Ad-Blocker
+            widget:
+              type: pihole
+              url: http://192.168.1.43
+              key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
+#              fields: ["queries", "blocked", "blocked_percent", "gravity"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png

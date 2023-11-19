@@ -3,30 +3,38 @@ kubernetes:
   children:
     master:
       hosts:
-        kang:
-          ansible_user: k3admin
-          ansible_host: 192.168.1.115
         stalli:
           ansible_user: k3admin
           ansible_host: 192.168.1.118
+          ansible_python_interpreter: /usr/bin/python3
+        kang:
+          ansible_user: k3admin
+          ansible_host: 192.168.1.115
+          ansible_python_interpreter: /usr/bin/python3
         issa:
           ansible_user: k3admin
           ansible_host: 192.168.1.121
+          ansible_python_interpreter: /usr/bin/python3
     worker:
       hosts:
-        azari:
-          ansible_user: k3admin
-          ansible_host: 192.168.1.116
+        # azari:
+        #   ansible_user: k3admin
+        #   ansible_host: 192.168.1.116
+        #   ansible_python_interpreter: /usr/bin/python3
         athena:
           ansible_user: k3admin
           ansible_host: 192.168.1.119
+          ansible_python_interpreter: /usr/bin/python3
         eve:
           ansible_user: k3admin
           ansible_host: 192.168.1.120
+          ansible_python_interpreter: /usr/bin/python3
         nubia:
           ansible_user: k3admin
           ansible_host: 192.168.1.122
+          ansible_python_interpreter: /usr/bin/python3
         rambeau:
           ansible_user: k3admin
           ansible_host: 192.168.1.123
+          ansible_python_interpreter: /usr/bin/python3
 
