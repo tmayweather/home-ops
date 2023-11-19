@@ -19,10 +19,10 @@
       block:
         - name: Packages | Install
           ansible.builtin.apt:
-            name: i965-va-driver-shaders,apt-transport-https,ca-certificates,conntrack,curl,dirmngr,fish,gdisk,
+            name: i965-va-driver-shaders,apt-transport-https,ca-certificates,conntrack,curl,dirmngr,zsh,gdisk,
               gnupg,hdparm,htop,intel-gpu-tools,intel-media-va-driver-non-free,iperf3,iptables,iputils-ping,ipvsadm,
               libseccomp2,lm-sensors,neofetch,net-tools,nfs-common,nvme-cli,open-iscsi,parted,psmisc,python3,
-              python3-apt,python3-openshift,python3-kubernetes,python3-yaml,smartmontools,socat,software-properties-common,
+              python3-apt,python3-yaml,smartmontools,socat,software-properties-common,python3-kubernetes,
               unzip,util-linux
             install_recommends: false
 
@@ -79,17 +79,17 @@
             dest: /etc/systemd/networkd.conf
             regexp: ManageForeignRoutes
             line: ManageForeignRoutes=no
-        - name: Network Configuration | Set NIC #change
-          ansible.builtin.copy:
-            dest: /etc/network/interfaces.d/enp7s0
-            content: |
-              auto enp7s0
-              allow-hotplug enp7s0
-              iface enp7s0 inet dhcp
-                  post-up ifconfig enp7s0 mtu 9000
-            owner: root
-            group: root
-            mode: "0644"
+#        - name: Network Configuration | Set NIC #change
+#          ansible.builtin.copy:
+#            dest: /etc/network/interfaces.d/enp7s0
+#            content: |
+#              auto enp7s0
+#              allow-hotplug enp7s0
+#              iface enp7s0 inet dhcp
+#                  post-up ifconfig enp7s0 mtu 9000
+#            owner: root
+#            group: root
+#            mode: "0644"
 
     - name: System Configuration
       notify: Reboot
