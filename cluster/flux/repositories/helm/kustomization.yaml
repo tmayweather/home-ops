@@ -24,4 +24,5 @@ resources:
   - ./bjw-s2.yaml
   - ./lwolf.yaml
   - ./descheduler.yaml
+  - ./metallb-charts.yaml
 #  - ./cilium.yaml
