@@ -12,7 +12,7 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   dependsOn:
-    - name: ccluster-apps-crunchy-postgres-operator
+    - name: cluster-apps-crunchy-postgres-operator
     - name: cluster-apps-external-secrets-stores
     - name: cluster-apps-ghostfolio-redis
   interval: 30m
