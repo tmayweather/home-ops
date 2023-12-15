@@ -1,11 +1,11 @@
-# ---
-# apiVersion: source.toolkit.fluxcd.io/v1beta2
-# kind: OCIRepository
-# metadata:
-#   name: terraform-oci
-#   namespace: flux-system
-# spec:
-#   interval: 1m
-#   url: oci://ghcr.io/tmayweather/manifests/terraform
-#   ref:
-#     tag: latest
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: terraform-oci
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: oci://ghcr.io/tmayweather/manifests/cloudflare
+  ref:
+    tag: ec703d9
