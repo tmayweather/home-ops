@@ -36,12 +36,16 @@
           kubernetes.core.k8s_drain:
             name: "{{ inventory_hostname }}"
             kubeconfig: /etc/rancher/k3s/k3s.yaml
-            state: drain
+            state: drain	
             delete_options:
               delete_emptydir_data: true
               ignore_daemonsets: true
               terminate_grace_period: 600
               wait_timeout: 900
+            pod_selectors:
+              - app!=csi-attacher
+              - app!=csi-provisioner
+              - longhorn.io/component!=instance-manager
           delegate_to: "{{ groups['master'][0] }}"
 
         - name: Update
