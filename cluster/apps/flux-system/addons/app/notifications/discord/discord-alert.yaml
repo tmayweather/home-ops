@@ -1,15 +1,15 @@
-apiVersion: notification.toolkit.fluxcd.io/v1beta3
-kind: Alert
-metadata:
-  name: homelab-notify
-  namespace: flux-system
-spec:
-  summary: "dev cluster"
-  providerRef:
-    name: discord
-  eventSeverity: error
-  eventSources:
-    - kind: GitRepository
-      name: '*'
-    - kind: Kustomization
-      name: '*'
+# apiVersion: notification.toolkit.fluxcd.io/v1beta3
+# kind: Alert
+# metadata:
+#   name: homelab-notify
+#   namespace: flux-system
+# spec:
+#   summary: "dev cluster"
+#   providerRef:
+#     name: discord
+#   eventSeverity: error
+#   eventSources:
+#     - kind: GitRepository
+#       name: '*'
+#     - kind: Kustomization
+#       name: '*'
