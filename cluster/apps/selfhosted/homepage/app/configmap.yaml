@@ -143,8 +143,14 @@ data:
     title: Mayweather Homepage
     favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png
     theme: dark
-    color: emerald
+    color: purple
+    background:
+      image: https://i.imgur.com/5DJSIvq.png
+      blur: sm
     headerStyle: clean
+    hideVersion: true
+    target: _self
+    statusStyle: "dot"
     layout:
       Home:
         style: row

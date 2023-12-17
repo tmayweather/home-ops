@@ -70,6 +70,8 @@ spec:
       main:
         enabled: true
         className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
           - host: &host "cash.mambalab.live"
             paths:
