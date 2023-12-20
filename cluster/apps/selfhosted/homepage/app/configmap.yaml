@@ -138,19 +138,20 @@ data:
               type: pihole
               url: http://192.168.1.43
               key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
-#              fields: ["queries", "blocked", "blocked_percent", "gravity"]
+              fields: ["queries", "blocked", "blocked_percent", "gravity"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png
     theme: dark
     color: gray
+    headerStyle: clean
+    hideVersion: true
+    statusStyle: "dot"
+    iconStyle: theme
+    target: _self
     background:
       image: https://i.imgur.com/5DJSIvq.png
       blur: sm
-    headerStyle: clean
-    hideVersion: true
-    target: _self
-    statusStyle: "dot"
     layout:
       Home:
         style: row
