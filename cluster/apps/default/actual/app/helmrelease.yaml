@@ -70,7 +70,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Actual
-          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/amazon.png
+          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/actual.png
 
         hosts:
           - host: &host "{{ .Release.Name }}.mambalab.live"

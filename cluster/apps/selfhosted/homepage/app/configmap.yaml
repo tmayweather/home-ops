@@ -100,6 +100,16 @@ data:
               password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
               fields: ["dashboards", "datasources", "alertstriggered"]
 
+        - PiHole:
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/pihole.png
+            href: http://192.168.1.43
+            description: DNS Server & Ad-Blocker
+            widget:
+              type: pihole
+              url: http://192.168.1.43
+              key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
+              fields: ["queries", "blocked", "blocked_percent", "gravity"]
+
     - Home:
          - Mealie:
             icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/mealie.png
@@ -130,15 +140,6 @@ data:
               url: https://miniflux.mambalab.live
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
-        - PiHole:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/pihole.png
-            href: http://192.168.1.43
-            description: DNS Server & Ad-Blocker
-            widget:
-              type: pihole
-              url: http://192.168.1.43
-              key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
-#              fields: ["queries", "blocked", "blocked_percent", "gravity"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png
