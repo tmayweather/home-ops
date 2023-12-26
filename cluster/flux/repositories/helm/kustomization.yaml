@@ -27,3 +27,4 @@ resources:
   - ./metallb-charts.yaml
   - ./democratic-csi.yaml
   - ./cilium.yaml
+  - ./k8s-at-home-charts.yaml
