@@ -13,7 +13,7 @@ data:
             - icon: youtube.png
               href: 'https://youtube.com/feed/subscriptions'
         - Spotify:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/navidrone.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/navidrome.png
               href: 'http://open.spotify.com'
         - Sports:
             - icon: slice.png
@@ -261,7 +261,7 @@ data:
 
             /* BOOKMARKS COLORS */
             --bookmark-group: var(--dracula-purple);
-
+            --bookmark-group-icon: var(--dracula-purple);
             --bookmark-icon-bg: #44475a60;
             --bookmark-icon: var(--dracula-purple);
             --bookmark-name: var(--dracula-text);
