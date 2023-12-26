@@ -72,6 +72,10 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.mambalab.live
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Selfhosted
+          gethomepage.dev/name: Ghostfolio
+          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/ghostfolio.png
         hosts:
           - host: &host "cash.mambalab.live"
             paths:
