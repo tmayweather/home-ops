@@ -27,7 +27,7 @@ data:
 
     - Cloud:
         - CloudFlare:
-            - icon: cloudflare.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/cloudflare.png
               href: https://dash.cloudflare.com
         - BackBlaze:
             - icon: backblaze.png
@@ -58,14 +58,14 @@ data:
 
     - Dev:
         - Github:
-            - icon: git.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/github.png
               href: https://github.com/TMayweather
         - Kubesearch:
             - icon: kubernetes-dashboard.png
               href: https://kubesearch.dev
 
         - DevOps Books:
-            - icon: booksonic.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/bookstack.png
               href: https://github.com/rohitg00/DevOps_Books
   docker.yaml: ""
   kubernetes.yaml: |
@@ -74,7 +74,7 @@ data:
     - Monitoring:
         - Uptime Kuma:
             href: https://uptime.mambalab.live
-            icon: uptime-kuma.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/uptime-kuma.png
             description: Status Monitor
             widget:
               type: uptimekuma
@@ -82,7 +82,7 @@ data:
               fields: ["up", "down", "uptime", "incident"]
               slug: services
         - Prometheus:
-            icon: prometheus.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/prometheus.png
             description: Systems Monitoring and Alerting Toolkit
             href: https://prometheus.mambalab.live
             widget:
@@ -90,7 +90,7 @@ data:
               url: https://prometheus.mambalab.live
               fields: ["targets_up", "targets_down", "targets_total"]
         - Grafana:
-            icon: grafana.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/grafana.png
             description: Observability Platform
             href: https://grafana.mambalab.live
             widget:
@@ -102,7 +102,7 @@ data:
 
     - Home:
          - Mealie:
-            icon: mealie.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/mealie.png
             href: https://mealie.mambalab.live
             description: Shopping Lists and Recipes Aggregate
             widget:
@@ -111,7 +111,7 @@ data:
               key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
               fields: ["recipes", "users", "categories", "tags"]
          - Paperless:
-            icon: paperless.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/paperless.png
             href: https://paperless.mambalab.live
             description: Document Management System
             widget:
@@ -131,27 +131,25 @@ data:
               key: {{HOMEPAGE_VAR_MINIFLUX_API_TOKEN}}
               fields: ["unread", "read"]
         - PiHole:
-            icon: pi-hole.png
-            href: http://pi.hole
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/pihole.png
+            href: http://192.168.1.43
             description: DNS Server & Ad-Blocker
             widget:
               type: pihole
               url: http://192.168.1.43
               key: {{HOMEPAGE_VAR_PIHOLE_API_TOKEN}}
-              fields: ["queries", "blocked", "blocked_percent", "gravity"]
+#              fields: ["queries", "blocked", "blocked_percent", "gravity"]
   settings.yaml: |
     title: Mayweather Homepage
     favicon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted-light.png
     theme: dark
     color: gray
     headerStyle: clean
-    hideVersion: true
-    statusStyle: "dot"
-    iconStyle: theme
-    target: _self
     background:
       image: https://i.imgur.com/5DJSIvq.png
       blur: sm
+    hideVersion: true
+    statusStyle: "dot"
     layout:
       Home:
         style: row
