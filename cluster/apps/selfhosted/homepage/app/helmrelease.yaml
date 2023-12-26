@@ -32,7 +32,7 @@ spec:
       main:
         annotations:
           reloader.stakater.com/auto: "true"
-
+          configmap.reloader.stakater.com/reload: &config homepage-config
         type: deployment
         strategy: Recreate
 
@@ -99,8 +99,6 @@ spec:
             path: /app/config/settings.yaml
           - subPath: widgets.yaml
             path: /app/config/widgets.yaml
-          - subPath: custom.css
-            path: /app/config/custom.css
 
     serviceAccount:
       create: true
