@@ -13,7 +13,7 @@ data:
             - icon: youtube.png
               href: 'https://youtube.com/feed/subscriptions'
         - Spotify:
-            - icon: spotify.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/navidrone.png
               href: 'http://open.spotify.com'
         - Sports:
             - icon: slice.png
@@ -111,7 +111,7 @@ data:
               key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
               fields: ["recipes", "users", "categories", "tags"]
          - Paperless:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/paperless.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/paperlessngx.png
             href: https://paperless.mambalab.live
             description: Document Management System
             widget:
@@ -122,7 +122,7 @@ data:
 
     - Selfhosted:
         - Miniflux:
-            icon: miniflux.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/miniflux.png
             href: https://miniflux.mambalab.live
             description: RSS Feed Reader
             widget:
