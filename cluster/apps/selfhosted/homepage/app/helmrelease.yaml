@@ -99,6 +99,8 @@ spec:
             path: /app/config/settings.yaml
           - subPath: widgets.yaml
             path: /app/config/widgets.yaml
+          - subPath: custom.css
+            path: /app/config/custom.css	
 
     serviceAccount:
       create: true
