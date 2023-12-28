@@ -79,7 +79,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: PGAdmin
-          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/postgresql.png
+          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/postgresql.png
         hosts:
           - host: "pgadmin.mambalab.live"
             paths:

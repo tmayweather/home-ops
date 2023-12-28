@@ -75,7 +75,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Ghostfolio
-          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/ghostfolio.png
+          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/ghostfolio.png
         hosts:
           - host: &host "cash.mambalab.live"
             paths:

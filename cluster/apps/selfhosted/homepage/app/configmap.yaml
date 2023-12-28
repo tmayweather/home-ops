@@ -13,7 +13,7 @@ data:
             - icon: youtube.png
               href: 'https://youtube.com/feed/subscriptions'
         - Spotify:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/navidrome.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/navidrome.png
               href: 'http://open.spotify.com'
         - Sports:
             - icon: slice.png
@@ -27,13 +27,13 @@ data:
 
     - Cloud:
         - CloudFlare:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/cloudflare.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/cloudflare.png
               href: https://dash.cloudflare.com
         - BackBlaze:
             - icon: backblaze.png
               href: https://secure.backblaze.com/b2_buckets.htm
         - AWS Console:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/amazon.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/amazon.png
               href: https://aws.amazon.com/console/
         - Terraform Cloud:
             - icon: terraform.png
@@ -58,14 +58,14 @@ data:
 
     - Dev:
         - Github:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/github.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/github.png
               href: https://github.com/TMayweather
         - Kubesearch:
             - icon: kubernetes-dashboard.png
               href: https://kubesearch.dev
 
         - DevOps Books:
-            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/bookstack.png
+            - icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/bookstack.png
               href: https://github.com/rohitg00/DevOps_Books
   docker.yaml: ""
   kubernetes.yaml: |
@@ -74,7 +74,7 @@ data:
     - Monitoring:
         - Uptime Kuma:
             href: https://uptime.mambalab.live
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/uptime-kuma.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/uptime-kuma.png
             description: Status Monitor
             widget:
               type: uptimekuma
@@ -82,7 +82,7 @@ data:
               fields: ["up", "down", "uptime", "incident"]
               slug: services
         - Prometheus:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/prometheus.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/prometheus.png
             description: Systems Monitoring and Alerting Toolkit
             href: https://prometheus.mambalab.live
             widget:
@@ -90,7 +90,7 @@ data:
               url: https://prometheus.mambalab.live
               fields: ["targets_up", "targets_down", "targets_total"]
         - Grafana:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/grafana.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/grafana.png
             description: Observability Platform
             href: https://grafana.mambalab.live
             widget:
@@ -101,7 +101,7 @@ data:
               fields: ["dashboards", "datasources", "alertstriggered"]
 
         - PiHole:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/pihole.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/pihole.png
             href: http://192.168.1.43
             description: DNS Server & Ad-Blocker
             widget:
@@ -112,7 +112,7 @@ data:
 
     - Home:
          - Mealie:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/mealie.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/mealie.png
             href: https://mealie.mambalab.live
             description: Shopping Lists and Recipes Aggregate
             widget:
@@ -121,7 +121,7 @@ data:
               key: {{HOMEPAGE_VAR_MEALIE_API_TOKEN}}
               fields: ["recipes", "users", "categories", "tags"]
          - Paperless:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/paperlessngx.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/paperlessngx.png	
             href: https://paperless.mambalab.live
             description: Document Management System
             widget:
@@ -132,7 +132,7 @@ data:
 
     - Selfhosted:
         - Miniflux:
-            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/miniflux.png
+            icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/miniflux.png
             href: https://miniflux.mambalab.live
             description: RSS Feed Reader
             widget:

@@ -66,7 +66,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Libreddit
-          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/Dracula%20Icons/libreddit.png
+          gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/libreddit.png
         hosts:
           - host: &host "libreddit.mambalab.live"
             paths:
