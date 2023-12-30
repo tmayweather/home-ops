@@ -9,7 +9,7 @@ spec:
   interval: 30m
   url: oci://ghcr.io/tmayweather/manifests/cloudflare
   ref:
-    tag: ec703d9 
+    tag: latest
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha2
 kind: Terraform
