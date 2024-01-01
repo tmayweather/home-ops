@@ -26,7 +26,7 @@ spec:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.47-2
       configuration:
       - secret:
-          name: miniflux-secret
+          name: aws-secret
       #     key: AWS_ACCESS_KEY_ID
       # - secret:
       #     name: aws
@@ -35,6 +35,8 @@ spec:
         repo1-path: /pgbackrest/postgres-operator/miniflux/repo1
       repos:
       - name: repo1
+        schedules:
+          full: 30 2 * * *
         s3:
           bucket: "crunchy-postgres"
           endpoint: "s3.us-east-1.amazonaws.com"
