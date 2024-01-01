@@ -9,4 +9,4 @@ spec:
   storageClassName: longhorn-config  # Specify the Longhorn storage class
   resources:
     requests:
-      storage: 10Gi  # Request the desired storage size
+      storage: 5Gi  # Request the desired storage size
