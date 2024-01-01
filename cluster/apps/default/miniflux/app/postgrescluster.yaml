@@ -27,10 +27,6 @@ spec:
       configuration:
       - secret:
           name: aws
-          key: AWS_ACCESS_KEY_ID
-      - secret:
-          name: aws
-          key: AWS_SECRET_ACCESS_KEY
       global:
         repo1-path: /pgbackrest/postgres-operator/miniflux/repo1
       repos:
