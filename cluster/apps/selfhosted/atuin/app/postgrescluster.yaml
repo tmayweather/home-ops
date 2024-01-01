@@ -21,19 +21,19 @@ spec:
         - atuin
       options: "SUPERUSER"
 
-  # backups:
-  #   pgbackrest:
-  #     manual:
-  #       repoName: repo1
-  #       options:
-  #         - --type=full
-  #     repos:
-  #       - name: repo1
-  #         volume:
-  #           volumeClaimSpec:
-  #             storageClassName: longhorn-database
-  #             accessModes:
-  #             - "ReadWriteOnce"
-  #             resources:
-  #               requests:
-  #                 storage: 5Gi
+  backups:
+    pgbackrest:
+      manual:
+        repoName: repo1
+        options:
+          - --type=full
+      repos:
+        - name: repo1
+          volume:
+            volumeClaimSpec:
+              storageClassName: longhorn-database
+              accessModes:
+              - "ReadWriteOnce"
+              resources:
+                requests:
+                  storage: 5Gi

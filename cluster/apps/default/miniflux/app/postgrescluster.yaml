@@ -23,17 +23,22 @@ spec:
 
   backups:
     pgbackrest:
-      manual:
-        repoName: repo1
-        options:
-          - --type=full
+      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.47-2
+      configuration:
+        valueFrom:
+          secretKeyRef:
+            name: miniflux-secret
+      # - secret
+      #     name: aws
+      #     key: AWS_ACCESS_KEY_ID
+      # - secret:
+      #     name: aws
+      #     key: AWS_SECRET_ACCESS_KEY
+      global:
+        repo1-path: /pgbackrest/postgres-operator/miniflux/repo1
       repos:
-        - name: repo1
-          volume:
-            volumeClaimSpec:
-              storageClassName: longhorn-database
-              accessModes:
-              - "ReadWriteOnce"
-              resources:
-                requests:
-                  storage: 5Gi
+      - name: repo1
+        s3:
+          bucket: "crunchy-postgres"
+          endpoint: "s3.us-east-1.amazonaws.com"
+          region: "us-east-1"
