@@ -26,7 +26,11 @@ spec:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.47-2
       configuration:
       - secret:
-          name: aws
+          name: miniflux-secret
+      #     key: AWS_ACCESS_KEY_ID
+      # - secret:
+      #     name: aws
+      #     key: AWS_SECRET_ACCESS_KEY
       global:
         repo1-path: /pgbackrest/postgres-operator/miniflux/repo1
       repos:
