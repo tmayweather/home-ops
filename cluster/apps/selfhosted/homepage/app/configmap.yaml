@@ -282,6 +282,9 @@ data:
             .service-tags .dark\:bg-theme-900\/50 {
                     background-color: rgb(var(--color-900) / 0.3) !important
             }
+            .bg-theme-800\/70 {
+                    background-color: #50fa7b !important;
+            }
             #information-widgets {
                     border-color: var(--widget-border);
             }
@@ -494,7 +497,7 @@ data:
             }
 
             .bg-white\/50 {
-                    background-color: hsla(0, 0%, 100%, 0.5);
+                    background-color: hsla(250.2, 52.8%, 17.5%, 0.5);
             }
 
             .bg-yellow-500 {
