@@ -3,13 +3,13 @@ kubernetes:
   children:
     master:
       hosts:
-        stalli:
-          ansible_user: k3admin
-          ansible_host: 192.168.1.118
-          ansible_python_interpreter: /usr/bin/python3
         kang:
           ansible_user: k3admin
           ansible_host: 192.168.1.115
+          ansible_python_interpreter: /usr/bin/python3
+        stalli:
+          ansible_user: k3admin
+          ansible_host: 192.168.1.118
           ansible_python_interpreter: /usr/bin/python3
         issa:
           ansible_user: k3admin

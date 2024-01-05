@@ -32,7 +32,12 @@ data:
   NodeHosts: |
     192.168.1.115 kang
     192.168.1.116 azari
-    192.168.1.117 zemo
+    192.168.1.118 stalli
+    192.168.1.119 athena
+    192.168.1.120 eve
+    192.168.1.121 issa	
+    192.168.1.122 nubia
+    192.168.1.123 rambeau		
   log: |
     debug
 kind: ConfigMap
