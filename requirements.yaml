@@ -6,7 +6,7 @@ collections:
   renovate/ansible.utils-3.x
     version: 3.0.0
   - name: community.general
-    version: 8.2.0
+    version: 8.3.0
   - name: community.sops
     version: 1.6.7
   - name: kubernetes.core
