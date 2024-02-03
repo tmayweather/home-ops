@@ -8,7 +8,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-external-secrets-stores
-  path: ./cluster/apps/default/miniflux/app
+  path: ./cluster/apps/selfhosted/miniflux/app
   prune: true
   sourceRef:
     kind: GitRepository

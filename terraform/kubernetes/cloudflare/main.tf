@@ -10,7 +10,7 @@ terraform {
     required_providers {
       cloudflare = {
         source = "cloudflare/cloudflare"
-        version = "4.22.0"
+        version = "4.23.0"
       }
       http = {
         source = "hashicorp/http"
@@ -18,7 +18,7 @@ terraform {
       }
       onepassword = {
         source = "1password/onepassword"
-	version = "1.4.0"
+	version = "1.4.1"
     }
     }
     required_version = ">= 1.3.0"
