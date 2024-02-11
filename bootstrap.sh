@@ -2,6 +2,12 @@
 
 # EXPORT GH PAT BEFORE RUNNING THIS SCRIPT
 
+helm install cilium cilium/cilium --version 1.14.4/
+--namespace kube-system /
+--set operator.replicas=1 /
+--set=ipam.operator.clusterPoolIPv4PodCIDRList="10.24.0.0/16"
+
+
 flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
   --owner=tmayweather \
