@@ -44,12 +44,14 @@ spec:
     gateway:
       image:
         registry: ghcr.io
+        repository: nginxinc/nginx-unprivileged
+        tag: 1.25-alpine
       ingress:
         enabled: true
         ingressClassName: internal
         annotations:
           nginx.ingress.kubernetes.io/whitelist-source-range: |
-            10.42.0.0/16,192.168.1.0/24
+            10.24.0.0/16,192.168.1.0/24
         hosts:
           - host: &host loki.mambalab.live
             paths:
