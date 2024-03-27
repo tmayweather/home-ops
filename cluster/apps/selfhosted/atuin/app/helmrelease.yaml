@@ -34,7 +34,7 @@ spec:
           main:
             image:
               repository: ghcr.io/atuinsh/atuin
-              tag: 17.0.0
+              tag: 18.0.2
             env:
               ATUIN_HOST: 0.0.0.0
               ATUIN_PORT: &port 80
