@@ -8,7 +8,7 @@ spec:
   postgresVersion: 15
   instances:
     - dataVolumeClaimSpec:
-        storageClassName: longhorn-database
+        storageClassName: local-path
         accessModes:
           - ReadWriteOnce
         resources:

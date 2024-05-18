@@ -100,4 +100,4 @@ spec:
         mountPath: /opt/couchdb/data
         accessMode: ReadWriteOnce
         size: 5Gi
-        storageClass: longhorn
+        storageClass: local-path

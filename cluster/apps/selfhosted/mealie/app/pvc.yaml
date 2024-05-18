@@ -6,7 +6,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: longhorn-config  # Specify the Longhorn storage class
+  storageClassName: local-path  # Specify the Longhorn storage class
   resources:
     requests:
       storage: 5Gi  # Request the desired storage size
