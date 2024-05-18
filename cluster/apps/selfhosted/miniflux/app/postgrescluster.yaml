@@ -32,7 +32,7 @@ spec:
         - name: repo1
           volume:
             volumeClaimSpec:
-              storageClassName: longhorn-database
+              storageClassName: local-path
               accessModes:
               - "ReadWriteOnce"
               resources:
