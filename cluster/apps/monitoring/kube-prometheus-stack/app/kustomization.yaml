@@ -7,7 +7,7 @@ namespace: monitoring
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-  - ./prometheusrule.yaml
+#  - ./prometheusrule.yaml
 configMapGenerator:
   - name: alertmanager-config-tpl
     files:
