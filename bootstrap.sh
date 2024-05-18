@@ -1,12 +1,8 @@
 #!/bin/sh
 
 # EXPORT GH PAT BEFORE RUNNING THIS SCRIPT
-
-helm install cilium cilium/cilium --version 1.14.4/
---namespace kube-system /
---set operator.replicas=1 /
---set=ipam.operator.clusterPoolIPv4PodCIDRList="10.24.0.0/16"
-
+sops -d cluster/bootstrap/age-key.sops.yaml | kubectl apply -f -
+sops -d cluster/bootstrap/github-deploy-key.sops.yaml | kubectl apply -f -
 
 flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
@@ -29,9 +25,6 @@ flux create kustomization secrets \
   --interval=10m \
   --decryption-provider=sops \
   --decryption-secret=sops-age
-
-sops -d cluster/bootstrap/age-key.sops.yaml | kubectl apply -f -
-sops -d cluster/bootstrap/github-deploy-key.sops.yaml | kubectl apply -f -
 
 # HAVE FLUX MONITOR CLUSTER APPS
 
