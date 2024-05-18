@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# EXPORT GH PAT BEFORE RUNNING THIS SCRIPT
-sops -d cluster/bootstrap/age-key.sops.yaml | kubectl apply -f -
-sops -d cluster/bootstrap/github-deploy-key.sops.yaml | kubectl apply -f -
+# EXPORT GH PAT BEFORE RUNNING THIS SCRIPT-
 
 flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
@@ -13,6 +11,8 @@ flux bootstrap github \
   --personal \
 
 # DEPLOY SOPS AGE
+sops -d cluster/bootstrap/age-key.sops.yaml | kubectl apply -f -
+sops -d cluster/bootstrap/github-deploy-key.sops.yaml | kubectl apply -f -
 
 flux create source git secrets \
   --url=https://github.com/tmayweather/home-ops.git \
