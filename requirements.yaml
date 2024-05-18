@@ -6,13 +6,13 @@ collections:
   renovate/ansible.utils-3.x
     version: 3.0.0
   - name: community.general
-    version: 8.5.0
+    version: 8.6.0
   - name: community.sops
     version: 1.6.7
   - name: kubernetes.core
-    version: 3.0.1
+    version: 3.1.0
   - name: onepassword.connect
-    version: 2.2.4
+    version: 2.3.0
 roles:
   - name: xanmanning.k3s
     version: v3.4.4
