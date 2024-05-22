@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: uptime-kuma-data
+  name: uptime-kuma
   namespace: monitoring
 spec:
   accessModes:
