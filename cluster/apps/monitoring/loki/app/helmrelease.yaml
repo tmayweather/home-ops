@@ -40,7 +40,7 @@ spec:
       replicas: 1
       persistence:
         size: 5Gi
-        storageClass: longhorn
+        storageClass: local-path
     gateway:
       image:
         registry: ghcr.io
