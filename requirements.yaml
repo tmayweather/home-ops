@@ -1,7 +1,7 @@
 ---
 collections:
   - name: ansible.posix
-    version: 1.5.4
+    version: 2.0.0
   - name: ansible.utils
   renovate/ansible.utils-3.x
     version: 3.0.0
