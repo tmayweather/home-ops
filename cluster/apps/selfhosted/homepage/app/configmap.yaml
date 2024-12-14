@@ -20,10 +20,10 @@ data:
               href: 'https://sportsurge.io'
         - Movies & TV:
             - icon: streama.png
-              href: 'https://moviestowatch.tv'
+              href: 'https://movies2watch.tv'
         - Anime:
             - icon: shiori.png
-              href: 'https://aniwave.to'
+              href: 'https://miruro.tv'
 
     - Cloud:
         - CloudFlare:
