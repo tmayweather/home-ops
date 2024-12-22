@@ -30,6 +30,7 @@ jobs:
           GITHUB_TOKEN: "${{ steps.generate-token.outputs.token }}"
         with:
           args: --verbose --no-progress --exclude-mail './**/*.md'
+          failIfEmpty: false
 
       - name: Find Link Checker Issue
         id: broken-link-check-issue
