@@ -20,7 +20,13 @@ data:
               href: 'https://sportsurge.io'
         - Movies & TV:
             - icon: streama.png
-              href: 'https://movies2watch.tv'
+              href: 'https://movies2watch.to'
+        - Live TV:
+            - icon: streama.png
+              href: 'https://thetvapp.to/'
+        - Movies & TV
+            - icon: streama.png
+              href: 'https://lookmovie2.to'
         - Anime:
             - icon: shiori.png
               href: 'https://miruro.tv'
