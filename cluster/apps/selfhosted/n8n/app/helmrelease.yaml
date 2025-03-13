@@ -66,7 +66,9 @@ spec:
 
     ingress:
       app:
-        className: "internal-nginx"
+        className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
         hosts:
           - host: *hostName
             paths:
