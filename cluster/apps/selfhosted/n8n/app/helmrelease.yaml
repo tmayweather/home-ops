@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: n8n
+  name: &app n8n
 spec:
   interval: 30m
   chart:
@@ -79,3 +79,13 @@ spec:
         tls:
           - hosts:
               - *host
+
+
+    persistence:
+      data:
+        existingClaim: *app
+        advancedMounts:
+          n8n:
+            app:
+              - path: /home/node/.n8n 
+    
