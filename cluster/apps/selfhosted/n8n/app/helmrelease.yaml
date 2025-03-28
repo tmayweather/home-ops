@@ -87,5 +87,32 @@ spec:
         advancedMounts:
           n8n:
             app:
-              - path: /home/node/.n8n 
+              - path: /home/node/.n8n
+
+    route:
+      app:
+        hostnames:
+          - *hostName
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - backendRefs:
+              - name: n8n
+                port: *port
+      webhooks:
+        hostnames:
+          - n8n-webhook.mambalab.live
+        parentRefs:
+          - name: external
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - matches:
+              - path:
+                  value: /webhook
+            backendRefs:
+              - name: n8n
+                port: *port
     
