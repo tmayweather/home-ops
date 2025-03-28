@@ -1,7 +1,7 @@
 ---
 ingress:
   - hostname: "*.mambalab.live"
-    service: https://nginx-external-controller:443
+    service: https://nginx-external-controller.networking.svc.cluster.local:443
     originRequest:
       originServerName: external.mambalab.live
   - service: http_status:404
