@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: &app n8n
+  name: n8n
 spec:
   interval: 30m
   chart:
@@ -83,7 +83,7 @@ spec:
 
     persistence:
       data:
-        existingClaim: *app
+        existingClaim: n8n
         advancedMounts:
           n8n:
             app:
@@ -92,7 +92,7 @@ spec:
     route:
       app:
         hostnames:
-          - *hostName
+          - *host
         parentRefs:
           - name: internal
             namespace: kube-system
