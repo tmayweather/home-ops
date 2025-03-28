@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: cluster-tunnel-settings
+    namespace: flux-system
+stringData:
+    CLUSTER_CLOUDFLARE_TUNNEL_ID: ENC[AES256_GCM,data:26DlypW5K/OYXGXAMNBVI0z9k4qtTPWzLZp7Tstzwep97M70,iv:EFfiROXn5qYgWAAaln/FZKa99aEMTUAystQVw+3/hpU=,tag:h2XftCDwLsATDRQ4mnGZCQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fema8gdj73k0hgk7s7h23uavm3mh3smst5eqq0sw8cfcakmxpa6q9pzftc
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjQ3lNNFdNRTRMOGhkdlhh
+            Zm5Td2RoN1F2SFBySXh2TU1aMXdVRGgzT2t3CmNkemdOc25KbWNBVE9DK0YramYy
+            OEdEellmZFJrWTc1Zzd4dzNBWWc4YVEKLS0tIDdyZXVjajVYMVBheGk0UytHMnpl
+            WW5VTFJxTENKeXlBME40SmF5NC9CTmMKgkL0uuI//RKqzz/sBOqJfoN9BelaL9vh
+            a+rusY81Wx6IfWZW2zt+Nb5/sqzCikgk2FhSH2DZhKKDB0pRGL2sLw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-03-28T15:19:11Z"
+    mac: ENC[AES256_GCM,data:iQrf9OO3rKwi7XKTzyNqc8JpY8K/7lyna/cqnS4DMxORHxLoWNL13BJtAhUxDbA3YzKUr0JqknUJmixxm66oe8In2cvPe13tgs5COVbqmkOBghKBK/0+/IO7OG4wn2WMe9jsmsjQC8qpothWARkeEFcRVyaVE8Fy+13RVmOACjA=,iv:HyOp7WKo95q+gE+gZ33cG8Cv9blbJqO2zWUiL074sy0=,tag:DOkQY76rD7Vfr+goaxQUZQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.4
