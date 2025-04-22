@@ -25,7 +25,7 @@ spec:
           app:
             image:
               repository: ghcr.io/n8n-io/n8n
-              tag: 1.88.0
+              tag: 1.89.2
             env:
               DB_SQLITE_VACUUM_ON_STARTUP: true
               EXECUTIONS_DATA_PRUNE: true
@@ -36,6 +36,7 @@ spec:
               N8N_PROTOCOL: "https"
               N8N_PORT: &port 8080
               N8N_HOST: &host n8n.mambalab.live
+              WEBHOOK_URL: "https://n8n-webhook.mambalab.live/"
               N8N_LOG_LEVEL: info
               N8N_LOG_OUTPUT: console
             resources:
