@@ -31,7 +31,7 @@ spec:
       replicaCount: 3
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: external.mambalab.live
+#          external-dns.alpha.kubernetes.io/hostname: external.mambalab.live
           metallb.universe.tf/loadBalancerIPs: 192.168.1.233
         externalTrafficPolicy: Cluster
       ingressClassResource:
