@@ -36,7 +36,7 @@ spec:
               N8N_PROTOCOL: "https"
               N8N_PORT: &port 8080
               N8N_HOST: &host n8n.mambalab.live
-              WEBHOOK_URL: "https://n8n-webhook.mambalab.live/webhook"
+              WEBHOOK_URL: "https://n8n-webhook.mambalab.live"
               N8N_LOG_LEVEL: info
               N8N_LOG_OUTPUT: console
             resources:
