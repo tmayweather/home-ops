@@ -36,7 +36,7 @@ spec:
             - name: config
               accessMode: ReadWriteOnce
               size: 1Gi
-              storageClass: longhorn-config
+              storageClass: local-path
               globalMounts:
                 - path: /var/lib/pgadmin
         annotations:
