@@ -34,7 +34,7 @@ spec:
         valueFrom:
           secretKeyRef:
             name: external-dns-cloudflare-secret
-            key: api-token
+            key: api_key
     extraArgs:
       - --ingress-class=external
       - --cloudflare-proxied
