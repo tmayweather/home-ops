@@ -10,8 +10,8 @@ parameters:
   staleReplicaTimeout: "2880"
   fromBackup: ""
   fsType: "ext4"
-  diskSelector: "ssd,fast"
-  nodeSelector: "storage"
+#  diskSelector: "ssd,fast"
+#  nodeSelector: "storage"
 
 ---
 kind: StorageClass
@@ -25,5 +25,5 @@ parameters:
   staleReplicaTimeout: "2880"
   fromBackup: ""
   fsType: "ext4"
-  diskSelector: "ssd,fast"
-  nodeSelector: "storage"
+#  diskSelector: "ssd,fast"
+#  nodeSelector: "storage"
