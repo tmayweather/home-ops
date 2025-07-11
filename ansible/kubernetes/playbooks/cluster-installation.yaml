@@ -41,14 +41,14 @@
         wait: true
         wait_sleep: 10
         wait_timeout: 360
-      loop:
+#      loop:
 #        - { name: coredns, kind: HelmChart, namespace: kube-system }
 #        - { name: policy, kind: CiliumL2AnnouncementPolicy }
 #        - { name: pool, kind: CiliumLoadBalancerIPPool }
-        - { name: podmonitors.monitoring.coreos.com, kind: CustomResourceDefinition }
-        - { name: prometheusrules.monitoring.coreos.com, kind: CustomResourceDefinition }
-        - { name: scrapeconfigs.monitoring.coreos.com, kind: CustomResourceDefinition }
-        - { name: servicemonitors.monitoring.coreos.com, kind: CustomResourceDefinition }
+#        - { name: podmonitors.monitoring.coreos.com, kind: CustomResourceDefinition }
+#        - { name: prometheusrules.monitoring.coreos.com, kind: CustomResourceDefinition }
+#        - { name: scrapeconfigs.monitoring.coreos.com, kind: CustomResourceDefinition }
+#        - { name: servicemonitors.monitoring.coreos.com, kind: CustomResourceDefinition }
 
 #    - name: Coredns
 #      when: k3s_primary_control_node
@@ -57,6 +57,16 @@
 #    - name: Cilium
 #      when: k3s_primary_control_node
 #      ansible.builtin.include_tasks: tasks/cilium.yaml
+#
+#    - name: Ensure python3-pip is installed
+#      apt:
+#        name: python3-pip
+#        state: present
+
+#    - name: Ensure kubernetes Python library is installed
+#      pip:
+#        name: kubernetes
+#        executable: pip3
 
     - name: Cruft
       when: k3s_primary_control_node

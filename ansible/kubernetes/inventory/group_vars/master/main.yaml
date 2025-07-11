@@ -5,7 +5,7 @@ k3s_server:
   disable: ["flannel", "metrics-server", "servicelb", "traefik"]
   disable-cloud-controller: true
   disable-helm-controller: false
-#  disable-kube-proxy: true
+  disable-kube-proxy: true
   disable-network-policy: true
   docker: false
   etcd-disable-snapshots: true
