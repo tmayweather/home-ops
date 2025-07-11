@@ -43,6 +43,5 @@ sops -d cluster/apps/kube-system/external-secrets/stores/onepassword/secret.sops
 
 kubectl apply -f cluster/apps/cert-manager/namespace.yaml
 kubectl apply -f cluster/apps/cert-manager/cert-manager/ks.yaml
-sops -d cluster/apps/cert-manager/cert-manager/issuers/secret.sops.yaml | kubectl apply -f -
 
 echo "Deployed cert-manager, external-secrets and 1password"
