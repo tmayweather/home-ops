@@ -37,28 +37,10 @@ spec:
           - name: runner
             image: ghcr.io/onedr0p/actions-runner:2.320.0@sha256:b3f9eb8fc31aada52e9fbccb567973ed70ed1c35d856e44a9a78caeb962dd8a4
             command: ["/home/runner/run.sh"]
-        #     volumeMounts:
-        #       - name: data
-        #         mountPath: /var/lib/dagger
-        #       - name: socket
-        #         mountPath: /var/run/buildkit
-        #     env:
-        #       - name: _EXPERIMENTAL_DAGGER_RUNNER_HOST
-        #         value: "unix:///var/run/buildkit/buildkitd.sock"
 
-        # volumes:
-        #   - name: data
-        #     hostPath:
-        #       path: /var/lib/dagger
-        #   - name: socket
-        #     hostPath:
-        #       path: /var/run/dagger
-
-        # securityContext:
-        #   runAsUser: 0
-        #   runAsGroup: 568
-        #   fsGroup: 568
-        #   fsGroupChangePolicy: "OnRootMismatch"  
+    controllerServiceAccount:
+      name: actions-runner-controller
+      namespace: actions-runner-system
   valuesFrom:
     - kind: Secret
       name: actions-runner-controller-auth-secret
