@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # EXPORT GH PAT BEFORE RUNNING THIS SCRIPT-
+#
+
+
 
 flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
