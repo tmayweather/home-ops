@@ -9,4 +9,4 @@ spec:
   resources:
     requests:
       storage: 5Gi   # Request 5 gigabytes of storage
-  storageClassName: local-path  # Use default storage
+  storageClassName: longhorn  # Use default storage
