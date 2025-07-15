@@ -203,7 +203,7 @@ data:
           show: false
           showLabel: true
     - longhorn:
-        expanded: false
+        expanded: true
         total: true
         labels: true
         nodes: false
