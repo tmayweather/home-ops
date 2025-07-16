@@ -57,10 +57,18 @@ spec:
         ports:
           http:
             port: 8080
-    ingress:
-      main:
-        enabled: true
-        className: cilium
+
+    route:
+      app:
+        hostnames: libreddit.mambalab.live"]
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+#    ingress:
+#      main:
+#        enabled: true
+#        className: cilium
         annotations:
       #    external-dns.alpha.kubernetes.io/target: internal.mambalab.live
           gethomepage.dev/enabled: "true"
