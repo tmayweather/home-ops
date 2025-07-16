@@ -12,7 +12,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.0.3
+      version: 4.1.2
       sourceRef:
         kind: HelmRepository
         name: bjw-s2
@@ -62,23 +62,31 @@ spec:
         ports:
           http:
             port: *port
-    ingress:
-      main:
-        enabled: true
-        className: internal
-        annotations:
-          external-dns.alpha.kubernetes.io/target: "internal.mambalab.live"
-        hosts:
-          - host: &host "ntfy.mambalab.live"
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  name: main
-                  port: http
-        tls:
-          - hosts:
-            - *host
+
+    route:
+      app:
+        hostnames: ntfy.mambalab.live
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+#    ingress:
+#      main:
+#        enabled: true
+#        className: internal
+#        annotations:
+#          external-dns.alpha.kubernetes.io/target: "internal.mambalab.live"
+#        hosts:
+#          - host: &host "ntfy.mambalab.live"
+ #           paths:
+ #             - path: /
+ #               pathType: Prefix
+ #               service:
+ #                 name: main
+ #                 port: http
+ #       tls:
+ #         - hosts:
+ #           - *host
     persistance:
       config:
         enabled: true
