@@ -60,9 +60,9 @@ spec:
     ingress:
       main:
         enabled: true
-        className: internal
+        className: cilium
         annotations:
-          external-dns.alpha.kubernetes.io/target: internal.mambalab.live
+      #    external-dns.alpha.kubernetes.io/target: internal.mambalab.live
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Libreddit
