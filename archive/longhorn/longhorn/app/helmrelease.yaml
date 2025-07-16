@@ -33,7 +33,7 @@ spec:
 #      backupTargetCredentialSecret: longhorn-secret
       defaultReplicaCount: 2
       backupstorePollInterval: 0
-      createDefaultDiskLabeledNodes: true
+      createDefaultDiskLabeledNodes: false
       restoreVolumeRecurringJobs: true
       storageOverProvisioningPercentage: 100
       storageMinimalAvailablePercentage: 1
