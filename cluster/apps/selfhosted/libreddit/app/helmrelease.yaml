@@ -6,15 +6,9 @@ metadata:
   namespace: selfhosted
 spec:
   interval: 15m
-  chart:
-    spec:
-      chart: app-template
-      version: 2.0.3
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s2
-        namespace: flux-system
-      interval: 5m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
   install:
     createNamespace: true
     remediation:
