@@ -32,7 +32,8 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: internal.mambalab.live
-          metallb.universe.tf/loadBalancerIPs: 192.168.1.234
+       #   metallb.universe.tf/loadBalancerIPs: 192.168.1.234
+          lbipam.cilium.io/ips: "192.168.1.241"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
@@ -68,7 +69,7 @@ spec:
         proxy-send-timeout: 3600
         resolver-timeout: 3600
         send-timeout: 3600
-#        proxy-http-version: 1.1
+#        proxy-``http-version: 1.1
 #        proxy-set-header: Connection "";
         ssl-protocols: TLSv1.3 TLSv1.2
       metrics:
