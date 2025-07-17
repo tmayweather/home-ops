@@ -32,7 +32,8 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: external.mambalab.live
-          metallb.universe.tf/loadBalancerIPs: 192.168.1.233
+#          metallb.universe.tf/loadBalancerIPs: 192.168.1.233
+          lbipam.cilium.io/ips: "192.168.1.242"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: external
