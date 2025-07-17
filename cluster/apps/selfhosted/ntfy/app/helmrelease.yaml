@@ -11,7 +11,6 @@ spec:
   chartRef:
     kind: OCIRepository
     name: app-template
-    namespace: flux-system
   maxHistory: 2
   install:
     createNamespace: true
@@ -60,7 +59,8 @@ spec:
 
     route:
       app:
-        hostnames: ntfy.mambalab.live
+        hostnames:
+          - ntfy.mambalab.live
         parentRefs:
           - name: internal
             namespace: kube-system
