@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mambalab-live
+  namespace: kube-system
+spec:
+  secretName: mambalab-live-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "mambalab.live"
+  dnsNames:
+  - "mambalab.live"
+  - "*.mambalab.live"  
