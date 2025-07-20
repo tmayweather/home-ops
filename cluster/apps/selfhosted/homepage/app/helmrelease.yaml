@@ -67,7 +67,7 @@ spec:
       app:
         ports:
           http:
-            port: 3000
+            port: *port
     route:
       app:
         hostnames:
@@ -79,7 +79,7 @@ spec:
         rules:
           - backendRefs:
               - identifier: app
-                port: 3000
+                port: *port
 
     persistence:
       config:
