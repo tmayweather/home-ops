@@ -25,12 +25,15 @@ spec:
 #        fsGroupChangePolicy: "OnRootMismatch"
 
     controllers:
-      main:
+      homepage:
         annotations:
           reloader.stakater.com/auto: "true"
           configmap.reloader.stakater.com/reload: &config homepage-config
         type: deployment
         strategy: Recreate
+
+        serviceAccount:
+          identifier: homepage
 
         containers:
           main:
@@ -92,6 +95,4 @@ spec:
           - subPath: custom.css
             path: /app/config/custom.css	
 
-    serviceAccount:
-      identifier: homepage
 
