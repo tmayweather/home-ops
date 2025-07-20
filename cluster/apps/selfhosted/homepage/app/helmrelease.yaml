@@ -31,17 +31,14 @@ spec:
           configmap.reloader.stakater.com/reload: &config homepage-config
         type: deployment
         strategy: Recreate
-
-
         containers:
           main:
             image:
               repository: ghcr.io/gethomepage/homepage
               tag: v0.8.3
-
             env:
               TZ: "AMERICA/NEW_YORK"
-
+              PORT: &port 3000
             envFrom:
               - secretRef:
                   name: homepage-secret
@@ -57,7 +54,7 @@ spec:
       main:
         ports:
           http:
-            port: &port 3000
+            port: *port
 
     route:
       app:
