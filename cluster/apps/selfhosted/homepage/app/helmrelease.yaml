@@ -32,8 +32,6 @@ spec:
         type: deployment
         strategy: Recreate
 
-        serviceAccount:
-          identifier: homepage
 
         containers:
           main:
