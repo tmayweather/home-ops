@@ -1,61 +1,71 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s-labs/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app homepage
-  namespace: selfhosted
 spec:
-  interval: 15m
+  interval: 1h
   chartRef:
     kind: OCIRepository
     name: app-template
-    namespace: flux-system
   install:
     remediation:
-      retries: 5
+      retries: 3
   upgrade:
+    cleanupOnFail: true
     remediation:
-      retries: 5
+      strategy: rollback
+      retries: 3
   values:
-#    defaultPodOptions:
-#      securityContext:
-#        runAsUser: 568
-#        runAsGroup: 568
-#        fsGroup: 568
-#        fsGroupChangePolicy: "OnRootMismatch"
-
     controllers:
       homepage:
         annotations:
           reloader.stakater.com/auto: "true"
-          configmap.reloader.stakater.com/reload: &config homepage-config
-        type: deployment
-        strategy: Recreate
         containers:
-          main:
+          app:
             image:
               repository: ghcr.io/gethomepage/homepage
-              tag: v0.8.3
+              tag: v1.4.0@sha256:63434aafeb3d49be1f21ebd3c5d777fe5b7794c31342daad4e96f09b72a57188
             env:
-              TZ: "AMERICA/NEW_YORK"
+              TZ: America/New_York
+              HOMEPAGE_ALLOWED_HOSTS: home.mambalab.live
               PORT: &port 3000
+              # LOG_LEVEL: debug
             envFrom:
               - secretRef:
                   name: homepage-secret
-
+            probes:
+              liveness:
+                enabled: true
+              readiness:
+                enabled: true
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 10
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities: { drop: ["ALL"] }
             resources:
               requests:
-                cpu: 15m
-                memory: 200M
+                cpu: 10m
               limits:
-                memory: 2G
-
+                memory: 512Mi
+    defaultPodOptions:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
     service:
-      main:
+      app:
         ports:
           http:
             port: *port
-
     route:
       app:
         hostnames:
@@ -68,26 +78,42 @@ spec:
           - backendRefs:
               - identifier: app
                 port: *port
-
     persistence:
       config:
-        enabled: true
+        type: emptyDir
+        globalMounts:
+          - path: /app/configs
+      config-files:
         type: configMap
         name: homepage-config
+        defaultMode: 0775
         globalMounts:
-          - subPath: bookmarks.yaml
-            path: /app/config/bookmarks.yaml
-          - subPath: docker.yaml
-            path: /app/config/docker.yaml
-          - subPath: kubernetes.yaml
-            path: /app/config/kubernetes.yaml
-          - subPath: services.yaml
-            path: /app/config/services.yaml
-          - subPath: settings.yaml
-            path: /app/config/settings.yaml
-          - subPath: widgets.yaml
-            path: /app/config/widgets.yaml
-          - subPath: custom.css
-            path: /app/config/custom.css	
-
-
+          - path: /app/config/bookmarks.yaml
+            subPath: bookmarks.yaml
+            readOnly: true
+          - path: /app/config/kubernetes.yaml
+            subPath: kubernetes.yaml
+            readOnly: true
+          - path: /app/config/services.yaml
+            subPath: services.yaml
+            readOnly: true
+          - path: /app/config/settings.yaml
+            subPath: settings.yaml
+            readOnly: true
+          - path: /app/config/widgets.yaml
+            subPath: widgets.yaml
+            readOnly: true
+          - path: /app/config/docker.yaml
+            subPath: docker.yaml
+            readOnly: true
+          - path: /app/config/custom.css
+            subPath: custom.css
+            readOnly: true
+          - path: /app/config/custom.js
+            subPath: custom.js
+            readOnly: true
+      config-logs:
+        type: emptyDir
+        enabled: true
+        globalMounts:
+          - path: /app/config/logs
