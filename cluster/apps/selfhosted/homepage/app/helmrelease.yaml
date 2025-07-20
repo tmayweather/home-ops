@@ -93,5 +93,5 @@ spec:
             path: /app/config/custom.css	
 
     serviceAccount:
-      create: true
+      identifier: homepage
 
