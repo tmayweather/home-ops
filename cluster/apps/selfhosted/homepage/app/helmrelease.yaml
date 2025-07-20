@@ -80,42 +80,24 @@ spec:
           - backendRefs:
               - identifier: app
                 port: 3000
+
     persistence:
       config:
-        type: emptyDir
-        globalMounts:
-          - path: /app/configs
-      config-files:
+        enabled: true
         type: configMap
         name: homepage-config
-        defaultMode: 0775
         globalMounts:
-          - path: /app/config/bookmarks.yaml
-            subPath: bookmarks.yaml
-            readOnly: true
-          - path: /app/config/kubernetes.yaml
-            subPath: kubernetes.yaml
-            readOnly: true
-          - path: /app/config/services.yaml
-            subPath: services.yaml
-            readOnly: true
-          - path: /app/config/settings.yaml
-            subPath: settings.yaml
-            readOnly: true
-          - path: /app/config/widgets.yaml
-            subPath: widgets.yaml
-            readOnly: true
-          - path: /app/config/docker.yaml
-            subPath: docker.yaml
-            readOnly: true
-          - path: /app/config/custom.css
-            subPath: custom.css
-            readOnly: true
-          - path: /app/config/custom.js
-            subPath: custom.js
-            readOnly: true
-      config-logs:
-        type: emptyDir
-        enabled: true
-        globalMounts:
-          - path: /app/config/logs
+          - subPath: bookmarks.yaml
+            path: /app/config/bookmarks.yaml
+          - subPath: docker.yaml
+            path: /app/config/docker.yaml
+          - subPath: kubernetes.yaml
+            path: /app/config/kubernetes.yaml
+          - subPath: services.yaml
+            path: /app/config/services.yaml
+          - subPath: settings.yaml
+            path: /app/config/settings.yaml
+          - subPath: widgets.yaml
+            path: /app/config/widgets.yaml
+          - subPath: custom.css
+            path: /app/config/custom.css
