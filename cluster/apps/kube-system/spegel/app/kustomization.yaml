@@ -6,6 +6,7 @@ resources:
   - ./helmrelease.yaml
 configMapGenerator:
   - name: spegel-values
+    namespace: kube-system
     files:
       - values.yaml=./helm/values.yaml
 configurations:
