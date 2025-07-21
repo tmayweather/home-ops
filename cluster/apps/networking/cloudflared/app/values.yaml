@@ -1,0 +1,25 @@
+cloudflare:
+  tunnelName: "kubernetes"
+  tunnelId: "65f5c00d-2549-496b-a85e-f3f8ebecedc5"
+  secretName: "tunnel-credentials"
+  originRequest:
+  originServerName: external.mambalab.live
+  
+ingress:
+  - hostname: "mambalab.live"
+    service: "https://cilium-gateway-external.kube-system.svc.cluster.local"
+  - hostname: "*.mambalab.live"
+    service: "https://cilium-gateway-external.kube-system.svc.cluster.local"
+  - service: http_status:404
+
+
+
+resources:
+  limits:
+    cpu: "100m"
+    memory: "128Mi"
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+
+replicaCount: 1
