@@ -60,7 +60,8 @@ spec:
 
     route:
       app:
-        hostnames: ["ntfy.mambalab.live"]
+        hostnames: 
+          - ntfy.mambalab.live
         parentRefs:
           - name: internal
             namespace: kube-system
