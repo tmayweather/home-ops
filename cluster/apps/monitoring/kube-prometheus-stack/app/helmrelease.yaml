@@ -50,9 +50,6 @@ spec:
   driftDetection:
     mode: enabled
   maxHistory: 3
-  dependsOn:
-    - name: grafana
-      namespace: observability
   timeout: 30m
   values:
     alertmanager:
