@@ -1,7 +1,19 @@
 ---
+warp-routing:
+  enabled: true
+
+# Top-level configuration
+originRequest:
+  http2Origin: true
+
+tunnel: ${CLUSTER_CLOUDFLARE_TUNNEL_ID}
+
+credentials-file: /etc/cloudflared/credential.json
 ingress:
   - hostname: "*.mambalab.live"
-    service: https://nginx-external-controller.networking.svc.cluster.local:443
+    service: &svc https://cilium-gateway-external.kube-system.svc.cluster.local
+  - hostname: mambalab.live
+    service: *svc
     originRequest:
       originServerName: external.mambalab.live
   - service: http_status:404
