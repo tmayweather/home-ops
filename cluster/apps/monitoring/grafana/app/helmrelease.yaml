@@ -113,14 +113,25 @@ spec:
         searchNamespace: ALL
     serviceMonitor:
       enabled: true
+
+    route:
+      main:
+        enabled: true
+        kind: HTTPRoute
+        hostnames:
+          - grafana.mambalab.live
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
     ingress:
-      enabled: true
-      ingressClassName: internal
-      hosts:
-        - &host grafana.mambalab.live
-      tls:
-        - hosts:
-            - *host
+      enabled: false
+#      ingressClassName: internal
+#      hosts:
+#        - &host grafana.mambalab.live
+#      tls:
+#        - hosts:
+#            - *host
     # persistence:
     #   enabled: true
     #   storageClassName: longhorn
