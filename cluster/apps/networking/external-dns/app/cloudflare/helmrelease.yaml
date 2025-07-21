@@ -36,7 +36,7 @@ spec:
             name: external-dns-cloudflare-secret
             key: api_key
     extraArgs:
-      - --ingress-class=external
+      - --gateway-name=external
       - --cloudflare-proxied
       - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
       - --crd-source-kind=DNSEndpoint
@@ -44,7 +44,7 @@ spec:
     sources: ["crd", "gateway-httproute"]
     txtOwnerId: default
     txtPrefix: k8s.
-    domainFilters: ["${SECRET_DOMAIN}"]
+    domainFilters: ["mambalab.live"]
     serviceMonitor:
       enabled: true
     podAnnotations:
