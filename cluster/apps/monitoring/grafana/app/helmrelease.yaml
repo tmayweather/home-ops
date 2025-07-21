@@ -117,20 +117,14 @@ spec:
     route:
       main:
         enabled: true
-        apiVersion: gateway.networking.k8s.io/v1
-        kind: HTTPRoute
         hostnames:
           - grafana.mambalab.live
         parentRefs:
           - name: internal
             namespace: kube-system
             sectionName: https
-        matches:
-          - path:
-              type: PathPrefix
-              value: /
-    ingress:
-      enabled: false
+#    ingress:
+#      enabled: false
 #      ingressClassName: internal
 #      hosts:
 #        - &host grafana.mambalab.live
