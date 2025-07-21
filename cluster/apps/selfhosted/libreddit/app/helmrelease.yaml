@@ -55,7 +55,8 @@ spec:
 
     route:
       app:
-        hostnames: libreddit.mambalab.live"]
+        hostnames: 
+          - libreddit.mambalab.live
         parentRefs:
           - name: internal
             namespace: kube-system
@@ -70,14 +71,3 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Libreddit
           gethomepage.dev/icon: https://raw.githubusercontent.com/Jas-SinghFSU/homepage-dracula/main/dracula_icons/libreddit.png
-        hosts:
-          - host: &host "libreddit.mambalab.live"
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  name: main
-                  port: http
-        tls:
-          - hosts:
-              - *host
