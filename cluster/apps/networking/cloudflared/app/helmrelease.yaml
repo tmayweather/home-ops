@@ -37,7 +37,7 @@ spec:
               TUNNEL_TRANSPORT_PROTOCOL: quic
             envFrom:
               - secretRef:
-                  name: cloudflare-tunnel-secret
+                  name: tunnel-credentials
             args: ["tunnel", "run"]
             probes:
               liveness: &probes
