@@ -9,4 +9,4 @@ spec:
   endpoints:
     - dnsName: external.mambalab.live
       recordType: CNAME
-      targets: ["${CLUSTER_CLOUDFLARE_TUNNEL_ID}.cfargotunnel.com"]
+      targets: ["65f5c00d-2549-496b-a85e-f3f8ebecedc5.cfargotunnel.com"]
