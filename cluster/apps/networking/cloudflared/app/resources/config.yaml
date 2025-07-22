@@ -5,13 +5,14 @@ warp-routing:
 # Top-level configuration
 originRequest:
   http2Origin: true
+  noTLSVerify: true
 
-tunnel: ${CLUSTER_CLOUDFLARE_TUNNEL_ID}
+tunnel: kubernetes
 
 credentials-file: /etc/cloudflared/credential.json
 ingress:
   - hostname: "*.mambalab.live"
-    service: &svc https://cilium-gateway-external.kube-system.svc.cluster.local
+    service: &svc http://cilium-gateway-external.kube-system.svc.cluster.local:80
   - hostname: mambalab.live
     service: *svc
     originRequest:
