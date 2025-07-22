@@ -12,7 +12,7 @@ tunnel: kubernetes
 credentials-file: /etc/cloudflared/credential.json
 ingress:
   - hostname: "*.mambalab.live"
-    service: &svc http://cilium-gateway-external.kube-system.svc.cluster.local:80
+    service: &svc https://cilium-gateway-external.kube-system.svc.cluster.local:443
   - hostname: mambalab.live
     service: *svc
     originRequest:
