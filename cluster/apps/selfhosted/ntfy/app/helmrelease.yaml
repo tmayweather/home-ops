@@ -63,7 +63,7 @@ spec:
         hostnames: 
           - ntfy.mambalab.live
         parentRefs:
-          - name: internal
+          - name: external
             namespace: kube-system
             sectionName: https
 #    ingress:
