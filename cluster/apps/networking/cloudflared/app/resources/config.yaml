@@ -6,6 +6,7 @@ warp-routing:
 originRequest:
   http2Origin: true
   noTLSVerify: true
+  originServerName: external.mambalab.live
 
 tunnel: kubernetes
 
@@ -15,6 +16,6 @@ ingress:
     service: &svc https://cilium-gateway-external.kube-system.svc.cluster.local:443
   - hostname: mambalab.live
     service: *svc
-    originRequest:
-      originServerName: external.mambalab.live
+#    originRequest:
+#      originServerName: external.mambalab.live
   - service: http_status:404
