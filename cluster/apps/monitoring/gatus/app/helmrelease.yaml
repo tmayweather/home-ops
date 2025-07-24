@@ -94,7 +94,7 @@ spec:
         hostnames:
           - status.mambalab.live
         parentRefs:
-          - name: external
+          - name: internal
             namespace: kube-system
             sectionName: https
     rbac:
