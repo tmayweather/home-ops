@@ -48,6 +48,7 @@ spec:
             key: tsig-key
     extraArgs:
       - --gateway-name=internal
+      - --log-level=debug
     policy: sync
     sources: ["service", "gateway-httproute"]
     txtOwnerId: main
