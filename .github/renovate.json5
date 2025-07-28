@@ -21,16 +21,16 @@
   "suppressNotifications": ["prIgnoreNotification"],
   "ignorePaths": ["**/archive/**"],
   "flux": {
-    "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(\\.j2)?$"]
+    "fileMatch": ["(^|/)cluster/.+\\.ya?ml(\\.j2)?$"]
   },
   "helm-values": {
-    "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(\\.j2)?$"]
+    "fileMatch": ["(^|/)cluster/.+\\.ya?ml(\\.j2)?$"]
   },
   "kubernetes": {
     "fileMatch": [
       "(^|/)\\.taskfiles/.+\\.ya?ml(\\.j2)?$",
       "(^|/)ansible/.+\\.ya?ml(\\.j2)?$",
-      "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?$"
+      "(^|/)cluster/.+\\.ya?ml(\\.j2)?$"
     ]
   },
   "regexManagers": [
@@ -38,7 +38,7 @@
       "description": "Process custom dependencies",
       "fileMatch": [
         "(^|/)ansible/.+\\.ya?ml(\\.j2)?$",
-        "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?$"
+        "(^|/)cluster/.+\\.ya?ml(\\.j2)?$"
       ],
       "matchStrings": [
         // Example: `k3s_release_version: "v1.27.3+k3s1"`
@@ -57,7 +57,7 @@
     {
       "description": "Process CloudnativePG Postgresql version",
       "fileMatch": [
-        "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?$"
+        "(^|/)cluster/.+\\.ya?ml(\\.j2)?$"
       ],
       "matchStrings": [
         "imageName: (?<depName>\\S+):(?<currentValue>.*\\-.*)"
