@@ -11,6 +11,7 @@ resources:
 #  - ./bazarr/ks.yaml
 #  - ./cross-seed/ks.yaml
   - ./jellyseerr/ks.yaml
+  - ./jellyfin/ks.yaml
 #  - ./pinchflat/ks.yaml
 #  - ./prowlarr/ks.yaml
 #  - ./plex/ks.yaml
