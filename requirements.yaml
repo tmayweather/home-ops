@@ -6,7 +6,7 @@ collections:
   renovate/ansible.utils-3.x
     version: 3.0.0
   - name: community.general
-    version: 11.1.0
+    version: 11.1.1
   - name: community.sops
     version: 2.2.0
   - name: kubernetes.core
@@ -15,4 +15,4 @@ collections:
     version: 2.3.0
 roles:
   - name: xanmanning.k3s
-    version: v3.4.4
+    version: v3.5.0

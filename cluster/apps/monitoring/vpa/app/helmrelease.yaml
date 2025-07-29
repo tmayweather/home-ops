@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vpa
@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: vpa
-      version: 2.4.0
+      version: 4.8.0
       sourceRef:
         kind: HelmRepository
         name: fairwinds
@@ -29,7 +29,7 @@ spec:
       enabled: true
       image:
         repository: registry.k8s.io/autoscaling/vpa-recommender
-        tag: 0.14.0
+        tag: 1.4.1
       resources:
         requests:
           cpu: 10m

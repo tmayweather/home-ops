@@ -1,0 +1,11 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: cloudflared-n8n
+  namespace: networking
+spec:
+  endpoints:
+    - dnsName: n8n-webhook.mambalab.live
+      recordType: CNAME
+      targets: ["e5abf459-ed91-4941-b12d-74962b998514.cfargotunnel.com"]
+

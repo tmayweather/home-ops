@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/helmrelease-helm-v2beta1.json
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: miniflux
@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.0.3
+      version: 3.7.3
       interval: 30m
       sourceRef:
         kind: HelmRepository
@@ -28,7 +28,7 @@ spec:
           main:
             image:
               repository: ghcr.io/miniflux/miniflux
-              tag: 2.0.48@sha256:1aa8755118cf2865ee72521d87b8645080361fb75421314facb3766c0b0c07a3
+              tag: 2.2.11@sha256:d8e0f95eaa319211642e22e7ee78f59b1c224071b40670635ad29c4f04e7b036
             env:
               BASE_URL: https://miniflux.mambalab.live
               CREATE_ADMIN: "1"
