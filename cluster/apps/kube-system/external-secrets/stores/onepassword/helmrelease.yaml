@@ -6,14 +6,10 @@ metadata:
   namespace: kube-system
 spec:
   interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.7.3
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s2
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -120,20 +116,20 @@ spec:
             fsGroup: 999
             runAsNonRoot: true
             fsGroupChangePolicy: OnRootMismatch
-    ingress:
-      main:
-        enabled: true
-        className: internal
-        hosts:
-          - host: &host "{{ .Release.Name }}.mambalab.live"
-            paths:
-              - path: /
-                service:
-                  name: main
-                  port: http
-        tls:
-          - hosts:
-              - *host
+#    ingress:
+#       main:
+#        enabled: true
+#        className: internal
+#        hosts:
+#          - host: &host "{{ .Release.Name }}.mambalab.live"
+#            paths:
+#              - path: /
+#                service:
+#                  name: main
+#                  port: http
+#        tls:
+#          - hosts:
+#              - *host
     persistence:
       config:
         enabled: true
@@ -145,3 +141,13 @@ spec:
         ports:
           http:
             port: *apiPort
+
+    route:
+      app:
+        hostnames:
+          - onepassword-connect.mambalab.live
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+
