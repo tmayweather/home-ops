@@ -85,6 +85,10 @@ spec:
         existingClaim: jellyfin-cache
         globalMounts:
           - path: /config/metadata
+      media:
+        type: emptyDir
+        globalMounts:
+          - path: /media
 #      media:
 #        type: nfs
 #        server: expanse.internal
