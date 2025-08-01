@@ -71,9 +71,9 @@ spec:
         supplementalGroups: [65536]
     persistence:
       config:
-        existingClaim: "{{ .Release.Name }}"
+        existingClaim: sonarr
       config-cache:
-        existingClaim: "{{ .Release.Name }}-cache"
+        existingClaim: sonarr-cache
         globalMounts:
           - path: /config/MediaCover
       media:
