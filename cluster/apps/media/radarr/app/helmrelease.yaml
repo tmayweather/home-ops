@@ -76,9 +76,9 @@ spec:
         existingClaim: "{{ .Release.Name }}-cache"
         globalMounts:
           - path: /config/MediaCover
-      media:
-        type: emptyDir
-        path: /media
+#      media:
+#        type: emptyDir
+#        path: /media
       tmpfs:
         type: emptyDir
         advancedMounts:
