@@ -19,7 +19,7 @@ spec:
 #    - name: rook-ceph-cluster
 #      namespace: rook-ceph
   interval: 1h
-  path: ./cluser/apps/media/qbittorrent/app
+  path: ./cluster/apps/media/qbittorrent/app
   postBuild:
     substitute:
       APP: *app
