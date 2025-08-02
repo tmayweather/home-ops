@@ -25,7 +25,7 @@ spec:
           main:
             image:
               repository: libreddit/libreddit
-              tag: latest@sha256:e79a5d6f6836b5a9351340433b1c26e8571ded943a5318f41ae939d314434c84
+              tag: latest@sha256:9b0c2ac695976a2cb4bfc6f4c243ec148744f32bc4c4d54e063377f4c474ae65
             env:
               TZ: "America/New_York"
               LIBREDDIT_DEFAULT_FRONT_PAGE: "default"
