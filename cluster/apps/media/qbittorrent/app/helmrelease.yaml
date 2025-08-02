@@ -114,6 +114,5 @@ spec:
         type: emptyDir
         globalMounts:
           - path: /media/Downloads/qbittorrent
-            subpath: Downloads/qbittorrent
       tmp:
         type: emptyDir
