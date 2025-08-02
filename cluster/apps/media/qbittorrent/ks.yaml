@@ -20,7 +20,7 @@ spec:
 #      namespace: rook-ceph
   interval: 1h
   path: ./cluser/apps/media/qbittorrent/app
-    postBuild:
+  postBuild:
     substitute:
       APP: *app
  #     GATUS_SUBDOMAIN: qb
