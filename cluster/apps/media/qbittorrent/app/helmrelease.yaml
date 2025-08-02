@@ -76,7 +76,7 @@ spec:
                 accessModes: [ReadWriteOnce]
                 resources:
                   requests:
-                    storage: 1Mi # Ignored
+                    storage: 50Gi # Ignored
                 storageClassName: longhorn
                 volumeMode: Filesystem
       media:
