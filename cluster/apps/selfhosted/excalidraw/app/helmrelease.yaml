@@ -34,7 +34,7 @@ spec:
           main:
             image:
               repository: ghcr.io/haraldkoch/excalidraw
-              tag: latest@sha256:cb3779395c51500351affce38c1fc1e4121bff03e1ca704c3adb1bbdc748bbe0
+              tag: latest@sha256:12b9f95d332f53a76a61bfb686a020c0dcbc47f06ee26bf115bdcce6d9950f8a
               pullPolicy: IfNotPresent
             resources:
               requests:
