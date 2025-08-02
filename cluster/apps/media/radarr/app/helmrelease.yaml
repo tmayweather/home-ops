@@ -80,7 +80,7 @@ spec:
         type: persistentVolumeClaim
         existingClaim: radarr-movies
         globalMounts:
-          - path: /media/movies
+          - path: /media
       tmpfs:
         type: emptyDir
         advancedMounts:
