@@ -80,7 +80,10 @@ spec:
                 storageClassName: longhorn
                 volumeMode: Filesystem
       media:
-        type: emptyDir
+        type: persistentVolumeClaim
+        accessModes: [ReadWriteOnce]
+        size: 10Gi
+        storageClassName: longhorn
         globalMounts:
           - path: /media/downloads/torrents
       tmpfs:
