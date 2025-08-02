@@ -77,9 +77,10 @@ spec:
         globalMounts:
           - path: /config/MediaCover
       media:
-        type: emptyDir
+        type: persistentVolumeClaim
+        existingClaim: radarr-movies
         globalMounts:
-          - path: /media
+          - path: /media/movies
       tmpfs:
         type: emptyDir
         advancedMounts:
