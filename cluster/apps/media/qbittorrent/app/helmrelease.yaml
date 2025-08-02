@@ -76,15 +76,15 @@ spec:
                 accessModes: [ReadWriteOnce]
                 resources:
                   requests:
-                    storage: 20Gi # Ignored
+                    storage: 5gi # Ignored
                 storageClassName: longhorn
                 volumeMode: Filesystem
+
       media:
         type: persistentVolumeClaim
-        accessMode: ReadWriteOnce
-        size: 10Gi
+        existingClaim: qbittorrent-downloads
         globalMounts:
-          - path: /media/downloads/torrents
+          - path: /media
       tmpfs:
         type: emptyDir
         advancedMounts:

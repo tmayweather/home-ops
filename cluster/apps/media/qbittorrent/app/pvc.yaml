@@ -8,5 +8,18 @@ spec:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 20Gi
+      storage: 5Gi
+  storageClassName: longhorn
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: qbittorrent-downloads
+  namespace: media
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 50Gi
   storageClassName: longhorn
