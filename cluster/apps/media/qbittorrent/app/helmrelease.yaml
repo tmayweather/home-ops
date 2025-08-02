@@ -81,7 +81,7 @@ spec:
                 volumeMode: Filesystem
       media:
         type: persistentVolumeClaim
-        accessMode: [ReadWriteOnce]
+        accessMode: ReadWriteOnce
         size: 10Gi
         globalMounts:
           - path: /media/downloads/torrents
