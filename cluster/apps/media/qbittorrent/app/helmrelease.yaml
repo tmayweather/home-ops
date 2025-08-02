@@ -94,5 +94,5 @@ spec:
         type: persistentVolumeClaim
         existingClaim: qbittorrent-downloads
         globalMounts:
-          - path: /media
+          - path: /media/downloads
 
