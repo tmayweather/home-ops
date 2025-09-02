@@ -69,6 +69,8 @@ spec:
         externalUrl: https://alertmanager.mambalab.live
         storage:
           volumeClaimTemplate:
+            metadata:
+              name: alertmanager
             spec:
               storageClassName: longhorn
               resources:
