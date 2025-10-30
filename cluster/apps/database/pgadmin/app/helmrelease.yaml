@@ -51,7 +51,7 @@ spec:
           main:
             image:
               repository: docker.io/dpage/pgadmin4
-              tag: "9.7"
+              tag: "9.9"
             strategy:
               type: Recreate
             envFrom:
