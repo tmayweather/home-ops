@@ -28,7 +28,7 @@ spec:
           main:
             image:
               repository: ghcr.io/miniflux/miniflux
-              tag: 2.2.12@sha256:b435a1ea2408f996c8d4c00c4f46523fa9203971ee1e85b1fe7ad3f0e7ae617f
+              tag: 2.2.14@sha256:02e50d5b277857e3600c14ec1a6a064a82320077914d8eb546691a5f4c1d406c
             env:
               BASE_URL: https://miniflux.mambalab.live
               CREATE_ADMIN: "1"
