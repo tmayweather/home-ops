@@ -35,7 +35,7 @@ spec:
       containers:
         - name: dagger-engine
           # https://github.com/dagger/dagger/pkgs/container/engine
-          image: registry.dagger.io/engine:v0.18.16
+          image: registry.dagger.io/engine:v0.19.4
 
           # 🚔Uncomment to debug failures
           # command: ["sleep", "infinity"]
