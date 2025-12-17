@@ -18,7 +18,7 @@ terraform {
       }
       onepassword = {
         source = "1password/onepassword"
-	version = "2.2.1"
+	version = "3.0.1"
     }
     }
     required_version = ">= 1.3.0"
