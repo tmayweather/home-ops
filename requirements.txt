@@ -1,5 +1,5 @@
 
-ansible-lint==26.2.0
+ansible-lint==26.4.0
 ansible==13.4.0
 bcrypt==5.0.0
 jmespath==1.0.1
